@@ -24,7 +24,8 @@ def main():
         "consumer_plans": llm["consumer_plans"],
         "api_models": llm["api_models"],
         "gpus": compute["gpus"],
-        "throughput": compute["throughput"],
+        "selfhost_models": compute["selfhost_models"],
+        "defaults": compute.get("defaults", {}),
     }
     with open(os.path.join(ROOT, "templates", "app.html"), encoding="utf-8") as f:
         app = f.read()

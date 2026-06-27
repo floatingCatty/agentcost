@@ -21,10 +21,12 @@ SCRAPERS = []  # e.g. [scrape_getdeploying, scrape_vast] -- add your own
 
 def validate(data):
     for g in data["gpus"]:
-        assert {"provider", "gpu", "usd_hr"} <= set(g), f"bad gpu row: {g}"
-        assert g["usd_hr"] > 0, f"non-positive price: {g}"
-    for t in data["throughput"]:
-        assert {"model", "gpu", "tok_s"} <= set(t), f"bad throughput row: {t}"
+        assert {"gpu", "vram_gb", "cloud_hr", "buy_usd", "power_w", "perf"} <= set(g), f"bad gpu row: {g}"
+        assert g["cloud_hr"] > 0 and g["buy_usd"] > 0, f"bad price: {g}"
+    for m in data["selfhost_models"]:
+        assert {"name", "ref_gpu", "ref_n", "tok_s_ref", "quants"} <= set(m), f"bad model: {m}"
+        for q in m["quants"]:
+            assert {"q", "vram_gb"} <= set(q), f"bad quant: {q}"
     return True
 
 
