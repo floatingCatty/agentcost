@@ -1,0 +1,113 @@
+{
+  "as_of": "2026-06-27 · GPU 价为人工/脚本维护的 on-demand 最低档；吞吐为估计",
+  "note": "gpus 为 on-demand 最低价（marketplace/spot 更便宜但稳定性差，已在 type 标注）。throughput 为 vLLM 高并发聚合解码量级估计，强依赖并发/量化/序列长度，技术用户可自行校正。",
+  "gpus": [
+    {
+      "provider": "Salad",
+      "gpu": "RTX 4090",
+      "vram_gb": 24,
+      "usd_hr": 0.15,
+      "type": "marketplace/spot"
+    },
+    {
+      "provider": "Vast.ai",
+      "gpu": "A100 80GB",
+      "vram_gb": 80,
+      "usd_hr": 0.13,
+      "type": "marketplace/spot"
+    },
+    {
+      "provider": "Thunder Compute",
+      "gpu": "H100 80GB",
+      "vram_gb": 80,
+      "usd_hr": 0.5,
+      "type": "marketplace"
+    },
+    {
+      "provider": "FluidStack",
+      "gpu": "H200 141GB",
+      "vram_gb": 141,
+      "usd_hr": 1.01,
+      "type": "neocloud"
+    },
+    {
+      "provider": "Packet.ai",
+      "gpu": "B200 180GB",
+      "vram_gb": 180,
+      "usd_hr": 2.25,
+      "type": "neocloud"
+    },
+    {
+      "provider": "Novita",
+      "gpu": "L40S 48GB",
+      "vram_gb": 48,
+      "usd_hr": 0.5,
+      "type": "neocloud"
+    },
+    {
+      "provider": "AWS",
+      "gpu": "H100 80GB",
+      "vram_gb": 80,
+      "usd_hr": 12.29,
+      "type": "大云(对比·按需p5单卡折算)"
+    }
+  ],
+  "throughput": [
+    {
+      "model": "Llama-3.x 8B 类(7-9B)",
+      "size_b": 8,
+      "min_vram_gb": 18,
+      "gpu": "RTX 4090",
+      "tok_s": 2200,
+      "precision": "fp8/awq"
+    },
+    {
+      "model": "Llama-3.x 8B 类(7-9B)",
+      "size_b": 8,
+      "min_vram_gb": 18,
+      "gpu": "H100 80GB",
+      "tok_s": 5200,
+      "precision": "bf16/fp8"
+    },
+    {
+      "model": "Qwen/Llama 32B 类",
+      "size_b": 32,
+      "min_vram_gb": 40,
+      "gpu": "H100 80GB",
+      "tok_s": 2400,
+      "precision": "fp8"
+    },
+    {
+      "model": "70-72B 类(Llama/Qwen)",
+      "size_b": 72,
+      "min_vram_gb": 80,
+      "gpu": "H100 80GB",
+      "tok_s": 1300,
+      "precision": "fp8(单卡紧)"
+    },
+    {
+      "model": "70-72B 类(Llama/Qwen)",
+      "size_b": 72,
+      "min_vram_gb": 140,
+      "gpu": "H200 141GB",
+      "tok_s": 1700,
+      "precision": "fp8"
+    },
+    {
+      "model": "DeepSeek-V4 类 MoE(整机)",
+      "size_b": 671,
+      "min_vram_gb": 700,
+      "gpu": "8×H100 80GB",
+      "tok_s": 3600,
+      "precision": "fp8(整机)"
+    },
+    {
+      "model": "GLM/Kimi 大型 MoE",
+      "size_b": 200,
+      "min_vram_gb": 280,
+      "gpu": "4×H100 80GB",
+      "tok_s": 2600,
+      "precision": "fp8"
+    }
+  ]
+}

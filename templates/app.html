@@ -1,0 +1,229 @@
+<style>
+  #ac{--bg:#0f1115;--card:#171a21;--line:#262b35;--ink:#e8eaed;--mut:#9aa3af;--acc:#4b86b4;--good:#3fa66a;--warn:#d9a23b;font-family:-apple-system,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg);max-width:960px;margin:0 auto;padding:18px;line-height:1.5}
+  #ac h1{font-size:22px;margin:0 0 2px}
+  #ac .sub{color:var(--mut);font-size:13px;margin-bottom:14px}
+  #ac .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+  #ac .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  #ac .seg button{background:transparent;color:var(--mut);border:0;padding:6px 12px;font-size:13px;cursor:pointer}
+  #ac .seg button.on{background:var(--acc);color:#fff}
+  #ac section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+  #ac details>summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+  #ac details>summary::before{content:"▸ ";color:var(--acc)}
+  #ac details[open]>summary::before{content:"▾ "}
+  #ac .lvl{font-size:11px;color:var(--mut);font-weight:400;margin-left:6px}
+  #ac .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:12px}
+  #ac .card{border:1px solid var(--line);border-radius:10px;padding:12px;background:#1c2029}
+  #ac .card .nm{font-weight:600}
+  #ac .card .pr{font-size:20px;font-weight:700;margin:4px 0}
+  #ac .card .gets{font-size:12px;color:var(--mut)}
+  #ac .pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:20px;border:1px solid var(--line);color:var(--mut)}
+  #ac .pill.top{color:var(--good);border-color:var(--good)}
+  #ac table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+  #ac th,#ac td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+  #ac th{color:var(--mut);font-weight:500;cursor:pointer;user-select:none}
+  #ac td.num,#ac th.num{text-align:right;font-variant-numeric:tabular-nums}
+  #ac .open{color:var(--good)} #ac .closed{color:var(--mut)}
+  #ac .ctl{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--mut);margin:6px 0 2px}
+  #ac input[type=range]{vertical-align:middle}
+  #ac input[type=number],#ac select{background:#1c2029;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:5px 8px;font-size:13px}
+  #ac .res{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+  #ac .big{font-size:15px}
+  #ac .rec{background:#15241b;border:1px solid var(--good);border-radius:8px;padding:10px 12px;margin-top:10px;font-size:14px}
+  #ac .rec.api{background:#1a2330;border-color:var(--acc)}
+  #ac .muted{color:var(--mut);font-size:12px}
+  #ac .foot{color:var(--mut);font-size:11px;margin-top:8px}
+  #ac a{color:var(--acc)}
+</style>
+
+<div id="ac">
+  <h1 id="t-title"></h1>
+  <div class="sub" id="t-sub"></div>
+  <div class="bar">
+    <span class="seg" id="seg-lang"><button data-l="zh">中文</button><button data-l="en">EN</button></span>
+    <span class="seg" id="seg-cur"><button data-c="CNY">¥ 人民币</button><button data-c="USD">$ USD</button></span>
+    <span class="muted" id="t-asof"></span>
+  </div>
+
+  <!-- L1 -->
+  <section id="s1">
+    <div style="font-weight:600;font-size:16px" id="t-s1h"></div>
+    <div class="muted" id="t-s1sub" style="margin-top:2px"></div>
+    <div class="ctl" style="margin-top:10px">
+      <span id="t-use"></span>
+      <span class="seg" id="seg-use"></span>
+    </div>
+    <div class="ctl">
+      <span id="t-bud"></span>
+      <span class="seg" id="seg-bud"></span>
+    </div>
+    <div class="cards" id="cards1"></div>
+  </section>
+
+  <!-- L2 -->
+  <section>
+    <details id="d2">
+      <summary><span id="t-s2h"></span><span class="lvl" id="t-s2lvl"></span></summary>
+      <div class="ctl" style="margin-top:10px">
+        <label id="t-mix"></label>
+        <input type="range" id="mix" min="0" max="100" value="75" style="width:160px">
+        <span id="mixv" class="muted"></span>
+      </div>
+      <div style="overflow-x:auto"><table id="tbl2"></table></div>
+      <div class="foot" id="t-s2foot"></div>
+    </details>
+  </section>
+
+  <!-- L3 -->
+  <section>
+    <details id="d3">
+      <summary><span id="t-s3h"></span><span class="lvl" id="t-s3lvl"></span></summary>
+      <div class="muted" id="t-s3sub" style="margin:8px 0"></div>
+      <div class="ctl">
+        <label id="t-vol"></label>
+        <input type="number" id="reqday" value="20000" min="0" style="width:110px"> <span id="t-reqs"></span>
+        <input type="number" id="avgtok" value="2000" min="1" style="width:90px"> <span id="t-toks"></span>
+      </div>
+      <div class="ctl">
+        <label id="t-model"></label>
+        <select id="shmodel"></select>
+      </div>
+      <div class="res" id="res3"></div>
+      <div class="foot" id="t-s3foot"></div>
+    </details>
+  </section>
+
+  <div class="foot" id="t-disc"></div>
+</div>
+
+<script>
+const DATA = __DATA__;
+const S = {lang:'zh', cur:'USD', mix:75};
+S.cur = 'CNY';
+const FX = DATA.fx_usd_cny || 7.2;
+function t(zh,en){return S.lang==='zh'?zh:en}
+// money: input USD per 1M tokens -> display per 万 token in chosen currency
+function perWan(usd1m){let v=usd1m/100; if(S.cur==='CNY')v*=FX; return v}
+function money(v){const sym=S.cur==='CNY'?'¥':'$';return sym+(v>=100?v.toFixed(0):v>=1?v.toFixed(2):v.toFixed(3))}
+function moneyAbs(usd){let v=usd; if(S.cur==='CNY')v*=FX; const sym=S.cur==='CNY'?'¥':'$';return sym+v.toLocaleString(undefined,{maximumFractionDigits:0})}
+function blended(m){const s=S.mix/100;return m.in*s+m.out*(1-s)} // USD per 1M
+
+const USE=[['daily',t=>t,'日常/写作','Everyday'],['code','编程','Coding'],['doc','长文档','Long docs'],['free','免费优先','Free first']];
+const BUD=[['free','免费','Free'],['lo','≤¥150/月','≤$20/mo'],['any','不限','Any']];
+let useSel='daily', budSel='any';
+
+function gpuPrice(base){let best=null;for(const g of DATA.gpus){if(g.gpu===base&&(best===null||g.usd_hr<best))best=g.usd_hr}return best}
+function configHr(row){const m=row.gpu.match(/^(\d+)[×x](.+)$/);const n=m?+m[1]:1;const base=m?m[2]:row.gpu;const p=gpuPrice(base);return p?n*p:null}
+
+function render(){
+  // toggles state
+  document.querySelectorAll('#seg-lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===S.lang));
+  document.querySelectorAll('#seg-cur button').forEach(b=>b.classList.toggle('on',b.dataset.c===S.cur));
+  // static i18n
+  el('t-title').textContent=t('AI 用多少钱？· Agent 成本对比','What does AI cost? · Agent cost compare');
+  el('t-sub').textContent=t('把订阅、API、自己租卡部署，全部折算成「元/万 token」一个口径。','Normalize plans, APIs and self-hosting into one unit: cost per 10k tokens.');
+  el('t-asof').textContent=t('数据：','data: ')+DATA.as_of;
+  el('t-s1h').textContent=t('① 我想用 AI，选哪个？','① I just want to use AI — which one?');
+  el('t-s1sub').textContent=t('给非技术用户：按用途和预算，直接推荐订阅/产品。','For non-tech users: pick by use-case & budget.');
+  el('t-use').textContent=t('用途：','Use: ');el('t-bud').textContent=t('预算：','Budget: ');
+  el('t-s2h').textContent=t('② API 价格对比（元/万 token）','② API price compare (per 10k tokens)');
+  el('t-s2lvl').textContent=t('进阶 · 给要接口调用的人','advanced');
+  el('t-s3h').textContent=t('③ 自部署 vs API：到底哪个省？','③ Self-host vs API: which is cheaper?');
+  el('t-s3lvl').textContent=t('技术 · 含盈亏平衡点','technical · break-even');
+  el('t-s3sub').textContent=t('租 GPU 自己跑开源模型是按小时全天计费的——用量越大越划算。算给你看在什么量级上自部署才回本。','Rented GPUs bill 24/7, so self-hosting only wins at high volume. Here is your break-even.');
+  el('t-vol').textContent=t('用量：每天','Volume: per day');
+  el('t-reqs').textContent=t('次请求 ×','requests ×');
+  el('t-toks').textContent=t('token/次','tokens/req');
+  el('t-model').textContent=t('自部署模型/显卡：','Self-host model/GPU: ');
+  el('t-mix').textContent=t('输入占比','Input share');
+  el('t-disc').innerHTML=t('⚠️ 价格与吞吐均为种子估计值，随时变动，请以官方为准。本工具开源、数据可自动更新。','⚠️ Prices & throughput are seed estimates and change often. Open-source, auto-updatable.');
+  el('t-s2foot').textContent=t('blended = 输入价×占比 + 输出价×(1−占比)。绿色=开源权重(可自部署)。','blended = in×share + out×(1−share). Green = open weights.');
+  el('t-s3foot').textContent=t('简化模型：自部署需租足够卡满足吞吐；忽略冷启动/工程/网络成本。','Simplified: rent enough GPUs for throughput; ignores ops overhead.');
+  buildSeg('seg-use',USE.map(u=>[u[0],t(u[2],u[3])]),useSel,v=>{useSel=v;render()});
+  buildSeg('seg-bud',BUD.map(b=>[b[0],t(b[2],b[3])]),budSel,v=>{budSel=v;render()});
+  el('mixv').textContent=t(`输入 ${S.mix}% / 输出 ${100-S.mix}%`,`in ${S.mix}% / out ${100-S.mix}%`);
+  renderCards();renderTable();renderShOptions();renderCalc();
+}
+function el(id){return document.getElementById(id)}
+function buildSeg(id,items,sel,cb){const c=el(id);c.innerHTML='';items.forEach(([v,label])=>{const b=document.createElement('button');b.textContent=label;b.className=v===sel?'on':'';b.onclick=()=>cb(v);c.appendChild(b)})}
+
+function renderCards(){
+  let list=DATA.consumer_plans.slice();
+  if(budSel==='free')list=list.filter(p=>p.usd_mo===0);
+  else if(budSel==='lo')list=list.filter(p=>p.usd_mo<=20);
+  if(useSel==='free')list=list.filter(p=>p.usd_mo===0);
+  if(useSel==='code')list=list.filter(p=>/编程|Agent|通用|写作/.test(p.best_for)||p.quality==='顶');
+  if(useSel==='doc')list=list.filter(p=>/长文|文档|通用/.test(p.best_for)||p.quality!=='中');
+  const rank={'顶':3,'高':2,'中':1};
+  list.sort((a,b)=>(rank[b.quality]-rank[a.quality])||(a.usd_mo-b.usd_mo));
+  const c=el('cards1');c.innerHTML='';
+  list.slice(0,8).forEach(p=>{const d=document.createElement('div');d.className='card';
+    d.innerHTML=`<div class="nm">${p.name} <span class="muted">${p.provider}</span></div>
+      <div class="pr">${p.usd_mo===0?t('免费','Free'):moneyAbs(p.usd_mo)+t('/月','/mo')}</div>
+      <div class="gets">${p.gets}</div>
+      <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','cap')}:${p.quality}</span> <span class="pill">${p.best_for}</span></div>`;
+    c.appendChild(d)});
+  if(!list.length)c.innerHTML=`<div class="muted">${t('没有匹配项，放宽预算试试。','No match, widen budget.')}</div>`;
+}
+
+let sort2={k:'blended',asc:true};
+function renderTable(){
+  const rows=DATA.api_models.map(m=>({...m,blended:blended(m)}));
+  const cols=[['model',t('模型','Model'),0],['blended',t('综合 元/万','blended'),1],['in',t('输入','in'),1],['out',t('输出','out'),1],['ctx',t('上下文','ctx'),1],['quality',t('能力','cap'),0],['weights',t('权重','wt'),0]];
+  rows.sort((a,b)=>{const v=(typeof a[sort2.k]==='number')?a[sort2.k]-b[sort2.k]:String(a[sort2.k]).localeCompare(b[sort2.k]);return sort2.asc?v:-v});
+  let h='<tr>'+cols.map(c=>`<th class="${c[2]?'num':''}" data-k="${c[0]}">${c[1]}</th>`).join('')+'</tr>';
+  for(const m of rows){h+=`<tr>
+    <td>${m.model}<div class="muted">${m.provider}</div></td>
+    <td class="num big">${money(perWan(m.blended))}</td>
+    <td class="num">${money(perWan(m.in))}</td>
+    <td class="num">${money(perWan(m.out))}</td>
+    <td class="num">${(m.ctx/1000)}k</td>
+    <td><span class="pill ${m.quality==='顶'?'top':''}">${m.quality}</span></td>
+    <td class="${m.weights==='open'?'open':'closed'}">${m.weights==='open'?t('开源','open'):t('闭源','closed')}</td></tr>`}
+  const tb=el('tbl2');tb.innerHTML=h;
+  tb.querySelectorAll('th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sort2.asc=(sort2.k===k)?!sort2.asc:true;sort2.k=k;renderTable()});
+}
+
+function renderShOptions(){
+  const sel=el('shmodel');const cur=sel.value;sel.innerHTML='';
+  DATA.throughput.forEach((r,i)=>{const hr=configHr(r);const o=document.createElement('option');o.value=i;
+    o.textContent=`${r.model} @ ${r.gpu} · ${r.tok_s} tok/s · ${hr?money(S.cur==='CNY'?hr*FX:hr)+'/h':'?'}`;sel.appendChild(o)});
+  if(cur)sel.value=cur;
+}
+function renderCalc(){
+  const reqday=+el('reqday').value||0, avgtok=+el('avgtok').value||1;
+  const tokDay=reqday*avgtok;
+  const i=+el('shmodel').value||0;const row=DATA.throughput[i];const hr=configHr(row);
+  const r=el('res3');
+  if(!hr){r.innerHTML=t('该配置缺显卡报价。','No GPU price.');return}
+  // self-host: units needed to sustain daily tokens flat-out
+  const dayCap=row.tok_s*86400;
+  const units=Math.max(1,Math.ceil(tokDay/dayCap));
+  const shMo=units*hr*24*30; // USD
+  const shPerWan=tokDay>0?(shMo/(tokDay*30/1e4)):0; // USD per 万
+  // cheapest API of comparable tier (same quality bucket as row implies open big = 顶/高)
+  const apis=DATA.api_models.map(m=>({...m,b:blended(m)})).sort((a,b)=>a.b-b.b);
+  const api=apis[0];
+  const apiMo=tokDay*30*api.b/1e6;
+  // break-even daily tokens vs that API (1 unit regime)
+  const beTok=hr*24*1e6/api.b;
+  const cheaper=shMo<apiMo;
+  r.innerHTML=`
+   <div class="big">${t('你的用量','Your volume')}: ${tokDay.toLocaleString()} token/${t('天','day')} ≈ ${(tokDay*30/1e6).toFixed(1)}M/${t('月','mo')}</div>
+   <table style="margin-top:8px">
+     <tr><th>${t('方案','Option')}</th><th class="num">${t('有效 元/万','eff./10k')}</th><th class="num">${t('每月','monthly')}</th></tr>
+     <tr><td>${t('自部署','Self-host')}: ${row.model.split('(')[0]} ×${units} @ ${row.gpu}</td><td class="num">${money(S.cur==='CNY'?shPerWan*FX:shPerWan)}</td><td class="num">${moneyAbs(shMo)}</td></tr>
+     <tr><td>${t('最便宜 API','Cheapest API')}: ${api.model}</td><td class="num">${money(perWan(api.b))}</td><td class="num">${moneyAbs(apiMo)}</td></tr>
+   </table>
+   <div class="rec ${cheaper?'':'api'}">${cheaper
+     ? t(`✅ 你的量够大，自部署更省，每月约省 ${moneyAbs(apiMo-shMo)}。`,`✅ At your volume, self-host wins, saving ~${moneyAbs(apiMo-shMo)}/mo.`)
+     : t(`💡 你的量还不够，直接用 API 更省。要自部署回本，每天需 > ${(beTok/1e6).toFixed(1)}M token（你现在 ${(tokDay/1e6).toFixed(2)}M）。`,`💡 Too low to self-host; API is cheaper. Break-even ≈ ${(beTok/1e6).toFixed(1)}M tokens/day (you: ${(tokDay/1e6).toFixed(2)}M).`)}</div>`;
+}
+
+// wire toggles
+document.querySelectorAll('#seg-lang button').forEach(b=>b.onclick=()=>{S.lang=b.dataset.l;render()});
+document.querySelectorAll('#seg-cur button').forEach(b=>b.onclick=()=>{S.cur=b.dataset.c;render()});
+el('mix').oninput=e=>{S.mix=+e.target.value;render()};
+['reqday','avgtok'].forEach(id=>el(id).oninput=renderCalc);
+el('shmodel').onchange=renderCalc;
+render();
+</script>
