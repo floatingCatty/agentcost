@@ -274,10 +274,10 @@
         "code",
         "doc"
       ],
-      "best_for": "免费·中文·办公文档",
-      "best_for_en": "Free · Chinese · office docs",
-      "gets": "完全免费、文档/会议、Qwen 旗舰",
-      "gets_en": "Fully free, docs/meetings, Qwen",
+      "best_for": "通用助手·中文·办公文档",
+      "best_for_en": "General assistant · Chinese · docs",
+      "gets": "完全免费、文档/会议、Qwen 旗舰(聊天App)",
+      "gets_en": "Fully free chat app, docs, Qwen",
       "quality": "高",
       "source": "https://www.tongyi.com/",
       "verified": "e"
@@ -413,14 +413,14 @@
       "tags": [
         "code"
       ],
-      "best_for": "AI 原生 IDE(SOLO agent)",
-      "best_for_en": "AI-native IDE (SOLO agent)",
-      "gets": "免费 + 会员；火山生态",
-      "gets_en": "Free + membership; Volcano eco",
+      "best_for": "字节·AI 编程 IDE(SOLO agent)",
+      "best_for_en": "ByteDance · AI coding IDE",
+      "gets": "AI 原生 IDE、火山生态",
+      "gets_en": "AI-native IDE, Volcano eco",
       "quality": "高",
       "source": "https://www.trae.ai/",
       "verified": "e",
-      "note": "会员制"
+      "note": "免费 · Pro 会员付费"
     },
     {
       "provider": "阿里",
@@ -429,14 +429,14 @@
       "tags": [
         "code"
       ],
-      "best_for": "IDE 编程助手",
-      "best_for_en": "IDE coding assistant",
-      "gets": "免费 + 会员；阿里云生态",
-      "gets_en": "Free + membership; Aliyun",
+      "best_for": "阿里·编程 IDE(类 Copilot)",
+      "best_for_en": "Alibaba · coding IDE (Copilot-like)",
+      "gets": "IDE 插件/编程 agent、阿里云生态",
+      "gets_en": "IDE plugin / coding agent, Aliyun",
       "quality": "高",
       "source": "https://lingma.aliyun.com/",
       "verified": "e",
-      "note": "会员制"
+      "note": "个人版免费 · 企业/高级档付费"
     }
   ],
   "api_models": [

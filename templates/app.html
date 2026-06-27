@@ -204,7 +204,7 @@ function renderCards(){
     const note=p.note?` <span class="muted">· ${p.note}</span>`:'';
     const vm=p.verified==='x'?` <span class="vmark ok" title="${t('价格已第三方交叉核对','cross-checked')}">✓</span>`:` <span class="vmark" title="${t('估计，点名称以官网为准','estimate; click name to verify')}">~</span>`;
     d.innerHTML=`<div class="nm">${link(p.source,p.name)}${vm} <span class="muted">${prov(p.provider)}</span></div>
-      <div class="pr">${p.usd_mo===0?t('免费','Free'):moneyAbs(p.usd_mo)+t('/月','/mo')}${note}</div>
+      <div class="pr">${p.usd_mo===0?(p.note?t('免费起','Free+'):t('免费','Free')):moneyAbs(p.usd_mo)+t('/月','/mo')}${note}</div>
       <div class="gets">${getsT(p)}</div>
       <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','cap')}:${qual(p.quality)}</span> <span class="pill">${bestforT(p)}</span></div>`;
     c.appendChild(d)});
