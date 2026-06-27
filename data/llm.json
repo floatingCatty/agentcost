@@ -19,7 +19,7 @@
       "quality": "顶",
       "source": "https://openai.com/chatgpt/pricing/",
       "verified": "x",
-      "agent": "OpenAI API · Agents SDK · Codex"
+      "agent": "OpenAI API · Agents SDK"
     },
     {
       "provider": "OpenAI",
@@ -37,7 +37,7 @@
       "quality": "顶",
       "source": "https://openai.com/chatgpt/pricing/",
       "verified": "x",
-      "agent": "OpenAI API · Agents SDK · Codex"
+      "agent": "OpenAI API · Agents SDK"
     },
     {
       "provider": "Anthropic",
@@ -90,7 +90,7 @@
       "quality": "顶",
       "source": "https://one.google.com/about/google-ai-plans/",
       "verified": "x",
-      "agent": "Gemini API · ADK · Antigravity"
+      "agent": "Gemini API · ADK"
     },
     {
       "provider": "Google",
@@ -108,7 +108,7 @@
       "quality": "顶",
       "source": "https://one.google.com/about/google-ai-plans/",
       "verified": "e",
-      "agent": "Gemini API · ADK · Antigravity"
+      "agent": "Gemini API · ADK"
     },
     {
       "provider": "Microsoft",
@@ -125,7 +125,7 @@
       "quality": "高",
       "source": "https://www.microsoft.com/store/b/copilotpro",
       "verified": "x",
-      "agent": "消费端Office;Agent需Copilot Studio/Azure(另购)"
+      "agent": "消费端;Agent 走 Copilot Studio/Azure(另购)"
     },
     {
       "provider": "Perplexity",
@@ -142,7 +142,7 @@
       "quality": "高",
       "source": "https://www.perplexity.ai/pro",
       "verified": "x",
-      "agent": "Sonar API(检索);非agent框架"
+      "agent": "Sonar API(检索向)"
     },
     {
       "provider": "Perplexity",
@@ -159,7 +159,7 @@
       "quality": "高",
       "source": "https://www.perplexity.ai/pro",
       "verified": "x",
-      "agent": "Sonar API(检索);非agent框架"
+      "agent": "Sonar API(检索向)"
     },
     {
       "provider": "xAI",
@@ -193,7 +193,7 @@
       "quality": "高",
       "source": "https://mistral.ai/products/le-chat",
       "verified": "e",
-      "agent": "Mistral API · Agents API · 开源权重"
+      "agent": "Mistral API · 开源权重"
     },
     {
       "provider": "Quora",
@@ -210,7 +210,7 @@
       "quality": "高",
       "source": "https://poe.com/subscribe",
       "verified": "e",
-      "agent": "多模型聚合;仅Poe Bot API"
+      "agent": "多模型聚合;Poe Bot API"
     },
     {
       "provider": "Meta",
@@ -226,7 +226,7 @@
       "quality": "中",
       "source": "https://www.meta.ai/",
       "verified": "e",
-      "agent": "App仅消费;开发用开源Llama自托管"
+      "agent": "开发用开源 Llama(自托管)"
     },
     {
       "provider": "DeepSeek",
@@ -243,7 +243,7 @@
       "quality": "高",
       "source": "https://www.deepseek.com/",
       "verified": "e",
-      "agent": "API · 开源权重(任意框架)"
+      "agent": "DeepSeek API · 开源权重"
     },
     {
       "provider": "字节",
@@ -261,7 +261,7 @@
       "source": "https://www.doubao.com/",
       "note": "会员¥68/月起",
       "verified": "e",
-      "agent": "火山引擎 API · 扣子 Coze · 开源"
+      "agent": "火山引擎 API · 扣子 Coze"
     },
     {
       "provider": "月之暗面",
@@ -298,7 +298,7 @@
       "quality": "高",
       "source": "https://www.tongyi.com/",
       "verified": "e",
-      "agent": "百炼/DashScope API · Qwen-Agent · 开源"
+      "agent": "百炼 API · Qwen-Agent · 开源"
     },
     {
       "provider": "百度",
@@ -316,7 +316,7 @@
       "quality": "高",
       "source": "https://yiyan.baidu.com/",
       "verified": "e",
-      "agent": "千帆 API · AppBuilder 智能体"
+      "agent": "千帆 API · AppBuilder"
     },
     {
       "provider": "腾讯",
@@ -334,7 +334,7 @@
       "quality": "高",
       "source": "https://yuanbao.tencent.com/",
       "verified": "e",
-      "agent": "腾讯云 API · 元器智能体"
+      "agent": "腾讯云 API · 元器"
     },
     {
       "provider": "智谱",
@@ -369,7 +369,7 @@
       "quality": "中",
       "source": "https://xinghuo.xfyun.cn/",
       "verified": "e",
-      "agent": "讯飞开放平台 API · 星辰 Agent"
+      "agent": "讯飞开放平台 API"
     },
     {
       "provider": "MiniMax",
@@ -386,7 +386,7 @@
       "quality": "中",
       "source": "https://hailuoai.com/",
       "verified": "e",
-      "agent": "MiniMax API · 开源"
+      "agent": "MiniMax 开放平台 API"
     },
     {
       "provider": "阶跃",

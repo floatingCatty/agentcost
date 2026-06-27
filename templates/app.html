@@ -261,7 +261,7 @@ function renderCalc3(){
   const beMonths=(cloudMo>buyMo-capex/(amortY*12))?capex/(cloudMo-(buyMo-capex/(amortY*12))):Infinity;
   const cur=curMul(),sym=S.cur==='CNY'?'¥':'$';
   const p10=mo=>{const v=(tokDay>0?mo/(tokDay*30/1e4):0)*cur;return sym+(v>=1?v.toFixed(2):v.toFixed(3))};
-  el('cfgline').innerHTML=`<b>${model.name}</b> · ${quant.q} · ${t('显存','VRAM')} ${quant.vram_gb}GB → <b>${gpu.gpu}×${nTot}</b>${reps>1?` (${reps}${t('副本','rep')}×${nPer})`:''} · ~${Math.round(tputTot).toLocaleString()} tok/s · ${t('质量','quality')} ${quant.quality}`;
+  el('cfgline').innerHTML=`<b>${model.name}</b> · ${quant.q} · ${t('显存','VRAM')} ${quant.vram_gb}GB → <b>${gpu.gpu}×${nTot}</b>${reps>1?` (${reps}${t('副本','rep')}×${nPer})`:''} · ≈${Math.round(tputTot).toLocaleString()} tok/s${t('(估算)','(est.)')} · ${t('质量','quality')} ${quant.quality}`;
   const RC=(lab,mo,sub)=>`<div class="rc"><div class="lab">${lab}</div><div class="v">${moneyAbs(mo)}<span style="font-size:13px;color:var(--mut)">/${t('月','mo')}</span></div><div class="s">${sub}</div></div>`;
   const mode=S.shMode;let cards='';const opts=[];
   if(mode!=='buy'){cards+=RC(t('租云算力','Rent cloud')+` ${gpu.gpu}×${nTot}`,cloudMo,`${t('有效','eff.')} ${p10(cloudMo)}/${t('万','10k')} · ${t('按需无前期','pay-as-go')}`);opts.push([t('租云','renting'),cloudMo,'']);}
