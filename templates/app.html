@@ -120,7 +120,7 @@ function setT(id,zh,en){const e=el(id);if(e)e.textContent=t(zh,en)}
 
 const USE=[['daily','日常/写作','Everyday'],['code','编程/Agent','Coding'],['doc','长文档/大上下文','Long docs']];
 const BUD=[['free','免费','Free'],['lo','≤¥150/月','≤$20/mo'],['any','不限','Any']];
-const PROV_EN={'字节':'ByteDance','月之暗面':'Moonshot','阿里':'Alibaba','智谱':'Zhipu'};
+const PROV_EN={'字节':'ByteDance','月之暗面':'Moonshot','阿里':'Alibaba','智谱':'Zhipu','百度':'Baidu','腾讯':'Tencent','讯飞':'iFlytek','阶跃':'StepFun'};
 const QUAL_EN={'顶':'top','高':'high','中':'mid'};
 function prov(p){return S.lang==='en'?(PROV_EN[p]||p):p}
 function qual(q){return S.lang==='en'?(QUAL_EN[q]||q):q}
@@ -168,7 +168,7 @@ function renderCards(){
   const rank={'顶':3,'高':2,'中':1};
   list.sort((a,b)=>(rank[b.quality]-rank[a.quality])||(a.usd_mo-b.usd_mo));
   const c=el('cards1');c.innerHTML='';
-  list.slice(0,8).forEach(p=>{const d=document.createElement('div');d.className='card';
+  list.slice(0,12).forEach(p=>{const d=document.createElement('div');d.className='card';
     d.innerHTML=`<div class="nm">${p.name} <span class="muted">${prov(p.provider)}</span></div>
       <div class="pr">${p.usd_mo===0?t('免费','Free'):moneyAbs(p.usd_mo)+t('/月','/mo')}</div>
       <div class="gets">${getsT(p)}</div>
