@@ -1,7 +1,7 @@
 {
   "as_of": "2026-06-27 · 主流厂商 API 价经 OpenRouter 自动刷新；订阅plan与能力档为人工维护",
   "fx_usd_cny": 7.2,
-  "note": "api_models 由 fetch/fetch_llm.py 经 OpenRouter 定期刷新；consumer_plans 人工维护。tags 用于①选AI的用途筛选：daily/code/doc。",
+  "note": "api_models 由 fetch/fetch_llm.py 经 OpenRouter 刷新；consumer_plans 人工维护(含 source 官网链接)。tags: daily/code/doc。价格随时变动，点名称进官网核对。",
   "consumer_plans": [
     {
       "provider": "OpenAI",
@@ -16,7 +16,8 @@
       "best_for_en": "General · writing · daily",
       "gets": "GPT-5.x、较高用量、联网/图像/语音",
       "gets_en": "GPT-5.x, higher limits, web/image/voice",
-      "quality": "顶"
+      "quality": "顶",
+      "source": "https://openai.com/chatgpt/pricing/"
     },
     {
       "provider": "OpenAI",
@@ -31,7 +32,8 @@
       "best_for_en": "Heavy · reasoning · research",
       "gets": "最强模型高配额、深度研究",
       "gets_en": "Top models, high quota, deep research",
-      "quality": "顶"
+      "quality": "顶",
+      "source": "https://openai.com/chatgpt/pricing/"
     },
     {
       "provider": "Anthropic",
@@ -46,7 +48,8 @@
       "best_for_en": "Writing · coding · long-form",
       "gets": "Sonnet/Opus、Projects、较高用量",
       "gets_en": "Sonnet/Opus, Projects, higher limits",
-      "quality": "顶"
+      "quality": "顶",
+      "source": "https://claude.com/pricing"
     },
     {
       "provider": "Anthropic",
@@ -60,7 +63,8 @@
       "best_for_en": "Heavy coding / agents",
       "gets": "5 倍用量、优先 Opus",
       "gets_en": "5x limits, priority Opus",
-      "quality": "顶"
+      "quality": "顶",
+      "source": "https://claude.com/pricing"
     },
     {
       "provider": "Google",
@@ -75,7 +79,8 @@
       "best_for_en": "General · ecosystem · long context",
       "gets": "Gemini 旗舰、Workspace 整合",
       "gets_en": "Flagship Gemini, Workspace",
-      "quality": "顶"
+      "quality": "顶",
+      "source": "https://one.google.com/about/google-ai-plans/"
     },
     {
       "provider": "Google",
@@ -90,7 +95,8 @@
       "best_for_en": "Heavy · multimodal · video",
       "gets": "最高配额、Veo 视频、最强 Gemini",
       "gets_en": "Top quota, Veo video, best Gemini",
-      "quality": "顶"
+      "quality": "顶",
+      "source": "https://one.google.com/about/google-ai-plans/"
     },
     {
       "provider": "Microsoft",
@@ -105,7 +111,8 @@
       "best_for_en": "Office · M365 integration",
       "gets": "Word/Excel/PPT 内置、含 M365",
       "gets_en": "Built into Office, incl. M365",
-      "quality": "高"
+      "quality": "高",
+      "source": "https://www.microsoft.com/microsoft-copilot"
     },
     {
       "provider": "Perplexity",
@@ -119,7 +126,8 @@
       "best_for_en": "Search · research · cited",
       "gets": "联网检索、多模型可选、引用来源",
       "gets_en": "Web search, model choice, citations",
-      "quality": "高"
+      "quality": "高",
+      "source": "https://www.perplexity.ai/pro"
     },
     {
       "provider": "Perplexity",
@@ -133,7 +141,8 @@
       "best_for_en": "Heavy research · unlimited",
       "gets": "无限查询、Labs、优先模型",
       "gets_en": "Unlimited queries, Labs, priority",
-      "quality": "高"
+      "quality": "高",
+      "source": "https://www.perplexity.ai/pro"
     },
     {
       "provider": "xAI",
@@ -147,7 +156,8 @@
       "best_for_en": "Real-time · X/social data",
       "gets": "实时 X 信息、高配额 Grok",
       "gets_en": "Live X data, high-quota Grok",
-      "quality": "高"
+      "quality": "高",
+      "source": "https://x.ai/grok"
     },
     {
       "provider": "Mistral",
@@ -161,7 +171,8 @@
       "best_for_en": "EU · open · value",
       "gets": "Mistral 旗舰、较高用量",
       "gets_en": "Flagship Mistral, higher limits",
-      "quality": "高"
+      "quality": "高",
+      "source": "https://mistral.ai/products/le-chat"
     },
     {
       "provider": "Quora",
@@ -176,7 +187,8 @@
       "best_for_en": "Multi-model hub",
       "gets": "GPT/Claude/Gemini 等一处用",
       "gets_en": "GPT/Claude/Gemini in one place",
-      "quality": "高"
+      "quality": "高",
+      "source": "https://poe.com/"
     },
     {
       "provider": "Meta",
@@ -189,7 +201,8 @@
       "best_for_en": "Free · social integration",
       "gets": "免费、WhatsApp/IG 内置、Llama",
       "gets_en": "Free, in WhatsApp/IG, Llama",
-      "quality": "中"
+      "quality": "中",
+      "source": "https://www.meta.ai/"
     },
     {
       "provider": "DeepSeek",
@@ -203,7 +216,8 @@
       "best_for_en": "Free · capable · Chinese",
       "gets": "免费用旗舰模型、联网",
       "gets_en": "Free flagship model, web",
-      "quality": "高"
+      "quality": "高",
+      "source": "https://www.deepseek.com/"
     },
     {
       "provider": "字节",
@@ -212,11 +226,13 @@
       "tags": [
         "daily"
       ],
-      "best_for": "免费·中文日常·语音",
-      "best_for_en": "Free · Chinese daily · voice",
-      "gets": "免费、移动端强、语音/图像",
-      "gets_en": "Free, strong on mobile, voice/image",
-      "quality": "中"
+      "best_for": "免费基础版·中文·语音",
+      "best_for_en": "Free basic · Chinese · voice",
+      "gets": "基础免费；另有会员¥68/月起",
+      "gets_en": "Free basic; paid from ¥68/mo",
+      "quality": "中",
+      "source": "https://www.doubao.com/",
+      "note": "会员¥68/月起"
     },
     {
       "provider": "月之暗面",
@@ -227,10 +243,12 @@
         "daily"
       ],
       "best_for": "免费·长文档·超长上下文",
-      "best_for_en": "Free · long docs · ultra-long context",
-      "gets": "免费、超长上下文、文件阅读",
-      "gets_en": "Free, ultra-long context, file reading",
-      "quality": "高"
+      "best_for_en": "Free · long docs · long context",
+      "gets": "基础免费；另有会员¥49/月",
+      "gets_en": "Free basic; membership ¥49/mo",
+      "quality": "高",
+      "source": "https://www.kimi.com/",
+      "note": "会员¥49/月"
     },
     {
       "provider": "阿里",
@@ -242,9 +260,10 @@
       ],
       "best_for": "免费·中文·办公文档",
       "best_for_en": "Free · Chinese · office docs",
-      "gets": "免费、文档/会议、Qwen 旗舰",
-      "gets_en": "Free, docs/meetings, flagship Qwen",
-      "quality": "高"
+      "gets": "完全免费、文档/会议、Qwen 旗舰",
+      "gets_en": "Fully free, docs/meetings, Qwen",
+      "quality": "高",
+      "source": "https://www.tongyi.com/"
     },
     {
       "provider": "百度",
@@ -256,9 +275,10 @@
       ],
       "best_for": "免费·中文·搜索整合",
       "best_for_en": "Free · Chinese · search",
-      "gets": "免费、文心旗舰、百度搜索",
-      "gets_en": "Free, flagship Ernie, Baidu search",
-      "quality": "高"
+      "gets": "完全免费、文心旗舰、百度搜索",
+      "gets_en": "Fully free, Ernie, Baidu search",
+      "quality": "高",
+      "source": "https://yiyan.baidu.com/"
     },
     {
       "provider": "腾讯",
@@ -270,23 +290,26 @@
       ],
       "best_for": "免费·微信生态·公众号检索",
       "best_for_en": "Free · WeChat ecosystem",
-      "gets": "免费、混元+DeepSeek、公众号搜",
-      "gets_en": "Free, Hunyuan+DeepSeek, WeChat search",
-      "quality": "高"
+      "gets": "完全免费、混元+DeepSeek、公众号搜",
+      "gets_en": "Fully free, Hunyuan+DeepSeek",
+      "quality": "高",
+      "source": "https://yuanbao.tencent.com/"
     },
     {
       "provider": "智谱",
       "name": "智谱清言",
-      "usd_mo": 0,
+      "usd_mo": 6.8,
       "tags": [
         "daily",
         "code"
       ],
-      "best_for": "免费·中文·智能体",
-      "best_for_en": "Free · Chinese · agents",
-      "gets": "免费、GLM 旗舰、AutoGLM",
-      "gets_en": "Free, flagship GLM, AutoGLM",
-      "quality": "高"
+      "best_for": "会员制·中文·智能体",
+      "best_for_en": "Paid · Chinese · agents",
+      "gets": "会员¥49/月(Max¥469)、GLM 旗舰、AutoGLM",
+      "gets_en": "¥49/mo (Max ¥469), GLM, AutoGLM",
+      "quality": "高",
+      "source": "https://chatglm.cn/",
+      "note": "会员¥49/月起"
     },
     {
       "provider": "讯飞",
@@ -299,7 +322,8 @@
       "best_for_en": "Free · voice · education",
       "gets": "免费、语音识别/合成强",
       "gets_en": "Free, strong speech I/O",
-      "quality": "中"
+      "quality": "中",
+      "source": "https://xinghuo.xfyun.cn/"
     },
     {
       "provider": "MiniMax",
@@ -312,7 +336,8 @@
       "best_for_en": "Free · multimodal · voice/video",
       "gets": "免费、语音/视频生成强",
       "gets_en": "Free, strong voice/video gen",
-      "quality": "中"
+      "quality": "中",
+      "source": "https://hailuoai.com/"
     },
     {
       "provider": "阶跃",
@@ -325,7 +350,8 @@
       "best_for_en": "Free · multimodal",
       "gets": "免费、Step 系列、图文理解",
       "gets_en": "Free, Step models, vision",
-      "quality": "中"
+      "quality": "中",
+      "source": "https://yuewen.cn/"
     }
   ],
   "api_models": [
