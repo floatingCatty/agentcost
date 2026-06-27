@@ -18,16 +18,17 @@
       "gets_en": "GPT-5.x, higher limits, web/image/voice",
       "quality": "顶",
       "source": "https://openai.com/chatgpt/pricing/",
-      "verified": "x"
+      "verified": "x",
+      "agent": "OpenAI API · Agents SDK · Codex"
     },
     {
       "provider": "OpenAI",
       "name": "ChatGPT Pro",
       "usd_mo": 200,
       "tags": [
+        "daily",
         "code",
-        "doc",
-        "daily"
+        "doc"
       ],
       "best_for": "重度·推理·研究",
       "best_for_en": "Heavy · reasoning · research",
@@ -35,16 +36,17 @@
       "gets_en": "Top models, high quota, deep research",
       "quality": "顶",
       "source": "https://openai.com/chatgpt/pricing/",
-      "verified": "x"
+      "verified": "x",
+      "agent": "OpenAI API · Agents SDK · Codex"
     },
     {
       "provider": "Anthropic",
       "name": "Claude Pro",
       "usd_mo": 20,
       "tags": [
+        "daily",
         "code",
-        "doc",
-        "daily"
+        "doc"
       ],
       "best_for": "写作·编程·长文",
       "best_for_en": "Writing · coding · long-form",
@@ -52,7 +54,8 @@
       "gets_en": "Sonnet/Opus, Projects, higher limits",
       "quality": "顶",
       "source": "https://claude.com/pricing",
-      "verified": "x"
+      "verified": "x",
+      "agent": "Anthropic API · Agent SDK · Claude Code · MCP"
     },
     {
       "provider": "Anthropic",
@@ -68,7 +71,8 @@
       "gets_en": "5x limits, priority Opus",
       "quality": "顶",
       "source": "https://claude.com/pricing",
-      "verified": "x"
+      "verified": "x",
+      "agent": "Anthropic API · Agent SDK · Claude Code · MCP"
     },
     {
       "provider": "Google",
@@ -76,8 +80,8 @@
       "usd_mo": 20,
       "tags": [
         "daily",
-        "doc",
-        "code"
+        "code",
+        "doc"
       ],
       "best_for": "通用·全家桶·大上下文",
       "best_for_en": "General · ecosystem · long context",
@@ -85,7 +89,8 @@
       "gets_en": "Flagship Gemini, Workspace",
       "quality": "顶",
       "source": "https://one.google.com/about/google-ai-plans/",
-      "verified": "x"
+      "verified": "x",
+      "agent": "Gemini API · ADK · Antigravity"
     },
     {
       "provider": "Google",
@@ -93,8 +98,8 @@
       "usd_mo": 250,
       "tags": [
         "daily",
-        "doc",
-        "code"
+        "code",
+        "doc"
       ],
       "best_for": "重度·多模态·视频",
       "best_for_en": "Heavy · multimodal · video",
@@ -102,7 +107,8 @@
       "gets_en": "Top quota, Veo video, best Gemini",
       "quality": "顶",
       "source": "https://one.google.com/about/google-ai-plans/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "Gemini API · ADK · Antigravity"
     },
     {
       "provider": "Microsoft",
@@ -110,8 +116,7 @@
       "usd_mo": 20,
       "tags": [
         "daily",
-        "doc",
-        "code"
+        "doc"
       ],
       "best_for": "办公·Office 整合",
       "best_for_en": "Office · M365 integration",
@@ -119,15 +124,16 @@
       "gets_en": "Built into Office, incl. M365",
       "quality": "高",
       "source": "https://www.microsoft.com/store/b/copilotpro",
-      "verified": "x"
+      "verified": "x",
+      "agent": "消费端Office;Agent需Copilot Studio/Azure(另购)"
     },
     {
       "provider": "Perplexity",
       "name": "Perplexity Pro",
       "usd_mo": 20,
       "tags": [
-        "doc",
-        "daily"
+        "daily",
+        "doc"
       ],
       "best_for": "搜索·研究·带引用",
       "best_for_en": "Search · research · cited",
@@ -135,15 +141,16 @@
       "gets_en": "Web search, model choice, citations",
       "quality": "高",
       "source": "https://www.perplexity.ai/pro",
-      "verified": "x"
+      "verified": "x",
+      "agent": "Sonar API(检索);非agent框架"
     },
     {
       "provider": "Perplexity",
       "name": "Perplexity Max",
       "usd_mo": 200,
       "tags": [
-        "doc",
-        "daily"
+        "daily",
+        "doc"
       ],
       "best_for": "重度研究·无限查询",
       "best_for_en": "Heavy research · unlimited",
@@ -151,7 +158,8 @@
       "gets_en": "Unlimited queries, Labs, priority",
       "quality": "高",
       "source": "https://www.perplexity.ai/pro",
-      "verified": "x"
+      "verified": "x",
+      "agent": "Sonar API(检索);非agent框架"
     },
     {
       "provider": "xAI",
@@ -167,7 +175,8 @@
       "gets_en": "Live X data, high-quota Grok",
       "quality": "高",
       "source": "https://x.ai/grok",
-      "verified": "x"
+      "verified": "x",
+      "agent": "xAI API"
     },
     {
       "provider": "Mistral",
@@ -183,7 +192,8 @@
       "gets_en": "Flagship Mistral, higher limits",
       "quality": "高",
       "source": "https://mistral.ai/products/le-chat",
-      "verified": "e"
+      "verified": "e",
+      "agent": "Mistral API · Agents API · 开源权重"
     },
     {
       "provider": "Quora",
@@ -191,7 +201,6 @@
       "usd_mo": 20,
       "tags": [
         "daily",
-        "code",
         "doc"
       ],
       "best_for": "多模型聚合·一站对比",
@@ -200,7 +209,8 @@
       "gets_en": "GPT/Claude/Gemini in one place",
       "quality": "高",
       "source": "https://poe.com/subscribe",
-      "verified": "e"
+      "verified": "e",
+      "agent": "多模型聚合;仅Poe Bot API"
     },
     {
       "provider": "Meta",
@@ -215,7 +225,8 @@
       "gets_en": "Free, in WhatsApp/IG, Llama",
       "quality": "中",
       "source": "https://www.meta.ai/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "App仅消费;开发用开源Llama自托管"
     },
     {
       "provider": "DeepSeek",
@@ -231,14 +242,16 @@
       "gets_en": "Free flagship model, web",
       "quality": "高",
       "source": "https://www.deepseek.com/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "API · 开源权重(任意框架)"
     },
     {
       "provider": "字节",
       "name": "豆包",
       "usd_mo": 0,
       "tags": [
-        "daily"
+        "daily",
+        "code"
       ],
       "best_for": "免费基础版·中文·语音",
       "best_for_en": "Free basic · Chinese · voice",
@@ -247,15 +260,17 @@
       "quality": "中",
       "source": "https://www.doubao.com/",
       "note": "会员¥68/月起",
-      "verified": "e"
+      "verified": "e",
+      "agent": "火山引擎 API · 扣子 Coze · 开源"
     },
     {
       "provider": "月之暗面",
       "name": "Kimi",
       "usd_mo": 0,
       "tags": [
-        "doc",
-        "daily"
+        "daily",
+        "code",
+        "doc"
       ],
       "best_for": "免费·长文档·超长上下文",
       "best_for_en": "Free · long docs · long context",
@@ -264,7 +279,8 @@
       "quality": "高",
       "source": "https://www.kimi.com/",
       "note": "会员¥49/月",
-      "verified": "e"
+      "verified": "e",
+      "agent": "Moonshot API · 开源 K2"
     },
     {
       "provider": "阿里",
@@ -272,6 +288,7 @@
       "usd_mo": 0,
       "tags": [
         "daily",
+        "code",
         "doc"
       ],
       "best_for": "免费·中文·办公文档",
@@ -280,7 +297,8 @@
       "gets_en": "Fully free, docs/meetings, Qwen",
       "quality": "高",
       "source": "https://www.tongyi.com/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "百炼/DashScope API · Qwen-Agent · 开源"
     },
     {
       "provider": "百度",
@@ -288,6 +306,7 @@
       "usd_mo": 0,
       "tags": [
         "daily",
+        "code",
         "doc"
       ],
       "best_for": "免费·中文·搜索整合",
@@ -296,7 +315,8 @@
       "gets_en": "Fully free, Ernie, Baidu search",
       "quality": "高",
       "source": "https://yiyan.baidu.com/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "千帆 API · AppBuilder 智能体"
     },
     {
       "provider": "腾讯",
@@ -304,6 +324,7 @@
       "usd_mo": 0,
       "tags": [
         "daily",
+        "code",
         "doc"
       ],
       "best_for": "免费·微信生态·公众号检索",
@@ -312,7 +333,8 @@
       "gets_en": "Fully free, Hunyuan+DeepSeek",
       "quality": "高",
       "source": "https://yuanbao.tencent.com/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "腾讯云 API · 元器智能体"
     },
     {
       "provider": "智谱",
@@ -329,14 +351,16 @@
       "quality": "高",
       "source": "https://chatglm.cn/",
       "note": "会员¥49/月起",
-      "verified": "e"
+      "verified": "e",
+      "agent": "BigModel API · AutoGLM"
     },
     {
       "provider": "讯飞",
       "name": "讯飞星火",
       "usd_mo": 0,
       "tags": [
-        "daily"
+        "daily",
+        "code"
       ],
       "best_for": "免费·语音强·教育",
       "best_for_en": "Free · voice · education",
@@ -344,14 +368,16 @@
       "gets_en": "Free, strong speech I/O",
       "quality": "中",
       "source": "https://xinghuo.xfyun.cn/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "讯飞开放平台 API · 星辰 Agent"
     },
     {
       "provider": "MiniMax",
       "name": "海螺",
       "usd_mo": 0,
       "tags": [
-        "daily"
+        "daily",
+        "code"
       ],
       "best_for": "免费·多模态·语音视频",
       "best_for_en": "Free · multimodal · voice/video",
@@ -359,14 +385,16 @@
       "gets_en": "Free, strong voice/video gen",
       "quality": "中",
       "source": "https://hailuoai.com/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "MiniMax API · 开源"
     },
     {
       "provider": "阶跃",
       "name": "跃问",
       "usd_mo": 0,
       "tags": [
-        "daily"
+        "daily",
+        "code"
       ],
       "best_for": "免费·多模态",
       "best_for_en": "Free · multimodal",
@@ -374,7 +402,8 @@
       "gets_en": "Free, Step models, vision",
       "quality": "中",
       "source": "https://yuewen.cn/",
-      "verified": "e"
+      "verified": "e",
+      "agent": "阶跃开放平台 API"
     }
   ],
   "api_models": [

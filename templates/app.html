@@ -31,6 +31,7 @@
 #ac .card .nm a:hover{color:var(--accent);border-color:var(--accent)}
 #ac .vmark{font-size:11px;color:var(--mut)}
 #ac .vmark.ok{color:var(--sage)}
+#ac .agentline{font-size:11.5px;color:#496684;background:#EEF3F8;border:1px solid #DCE6F0;border-radius:8px;padding:3px 8px;margin-top:6px}
 #ac td a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--mut)}
 #ac td a:hover{color:var(--accent)}
 #ac .foot a{border-bottom:1px dotted var(--accent)}
@@ -182,7 +183,8 @@ function render(){
   const orLink=link('https://openrouter.ai/models','OpenRouter ↗'), gdLink=link((DATA.defaults&&DATA.defaults.cloud_src)||'#','getdeploying ↗'), subLink=link(DATA.sub_src||'#','aipricing.guru ↗');
   el('t-disc').innerHTML=t(`数据来源：API 价格经 ${orLink} 每周自动刷新；云 GPU 价 ${gdLink}；订阅价交叉核对自 ${subLink}（✓=已核对，~=估计，点产品名进官网采购/核对）。数字随时变动、部分为估计。本工具开源。`,`Sources: API via ${orLink} (weekly auto-refresh); cloud GPU via ${gdLink}; subscriptions cross-checked vs ${subLink} (✓=checked, ~=estimate; click a name to buy/verify). Estimates, change often. Open-source.`);
   el('t-s2foot').innerHTML=t(`综合价 = 输入价×占比 + 输出价×(1−占比)。绿色 = 开源权重。价格来源 ${orLink}，点模型名进厂商定价页。`,`blended = in×share + out×(1−share). Green = open weights. Source ${orLink}; click a model for the vendor page.`);
-  el('t-s3foot').innerHTML=t(`简化模型：自购需租足够卡满足吞吐；忽略冷启动/运维。云价来源 ${gdLink}；${(DATA.defaults&&DATA.defaults.buy_note)||'购买价为市场估价'}。`,`Simplified; ignores ops. Cloud price ${gdLink}; buy price = market estimate.`);
+  const buyLink=link((DATA.defaults&&DATA.defaults.buy_src)||'#','gpucost.org ↗');
+  el('t-s3foot').innerHTML=t(`简化模型：自购需租足够卡满足吞吐；忽略冷启动/运维。云价来源 ${gdLink}；购买价来源 ${buyLink}（${(DATA.defaults&&DATA.defaults.buy_note)||'市场估价'}）。`,`Simplified; ignores ops. Cloud price ${gdLink}; buy price ${buyLink} (market estimate).`);
   buildSeg('seg-use',USE.map(u=>[u[0],t(u[1],u[2])]),useSel,v=>{useSel=v;render()});
   buildSeg('seg-bud',BUD.map(b=>[b[0],t(b[1],b[2])]),budSel,v=>{budSel=v;render()});
   el('mixv').textContent=t(`输入 ${S.mix}% / 输出 ${100-S.mix}%`,`in ${S.mix}% / out ${100-S.mix}%`);
@@ -204,6 +206,7 @@ function renderCards(){
     d.innerHTML=`<div class="nm">${link(p.source,p.name)}${vm} <span class="muted">${prov(p.provider)}</span></div>
       <div class="pr">${p.usd_mo===0?t('免费','Free'):moneyAbs(p.usd_mo)+t('/月','/mo')}${note}</div>
       <div class="gets">${getsT(p)}</div>
+      ${(useSel==='code'&&p.agent)?`<div class="agentline">${t('开发','dev')}: ${p.agent}</div>`:''}
       <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','cap')}:${qual(p.quality)}</span> <span class="pill">${bestforT(p)}</span></div>`;
     c.appendChild(d)});
   if(!list.length)c.innerHTML=`<div class="muted">${t('没有匹配项，放宽预算试试。','No match, widen budget.')}</div>`;
