@@ -22,6 +22,7 @@ def main():
         "as_of": llm.get("as_of"),
         "fx_usd_cny": llm.get("fx_usd_cny", 7.2),
         "consumer_plans": llm["consumer_plans"],
+        "coding_services": llm.get("coding_services", []),
         "api_models": llm["api_models"],
         "sub_src": llm.get("sub_src", ""),
         "gpus": compute["gpus"],

@@ -193,6 +193,17 @@ function render(){
 function buildSeg(id,items,sel,cb){const c=el(id);c.innerHTML='';items.forEach(([v,label])=>{const b=document.createElement('button');b.textContent=label;b.className=v===sel?'on':'';b.onclick=()=>cb(v);c.appendChild(b)})}
 
 function renderCards(){
+  const budRow=el('seg-bud').parentElement;
+  if(useSel==='code'){
+    budRow.style.display='none';
+    el('t-s1sub').textContent=t('「编程」= 提供 API 或 Codex/Claude Code 类编程 agent 框架的服务；价格按 token 计，见 ② API 比价。','"Coding" = services offering an API or a coding-agent framework (Codex/Claude Code-like); priced per token — see ② API.');
+    el('cards1').innerHTML=(DATA.coding_services||[]).map(s=>`<div class="card">
+      <div class="nm">${link(s.source,s.agent)} <span class="muted">${prov(s.provider)}</span></div>
+      <div class="gets">${s.desc}</div>
+      <div style="margin-top:6px"><span class="pill">${s.kind}</span> <span class="agentline" style="margin-top:0">API 计费 · 见 ②</span></div></div>`).join('');
+    return;
+  }
+  budRow.style.display='';
   let list=DATA.consumer_plans.slice();
   if(budSel==='free')list=list.filter(p=>p.usd_mo===0);
   else if(budSel==='lo')list=list.filter(p=>p.usd_mo<=20);

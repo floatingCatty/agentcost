@@ -541,5 +541,98 @@
       "quality": "高"
     }
   ],
-  "sub_src": "https://www.aipricing.guru/subscriptions/"
+  "sub_src": "https://www.aipricing.guru/subscriptions/",
+  "coding_services": [
+    {
+      "provider": "OpenAI",
+      "agent": "Codex",
+      "desc": "CLI 编程 agent + API",
+      "kind": "CLI/API",
+      "source": "https://openai.com/codex/"
+    },
+    {
+      "provider": "Anthropic",
+      "agent": "Claude Code",
+      "desc": "终端编程 agent + API + MCP",
+      "kind": "CLI/API",
+      "source": "https://www.claude.com/product/claude-code"
+    },
+    {
+      "provider": "Google",
+      "agent": "Gemini CLI / Antigravity",
+      "desc": "CLI 编程 agent + API",
+      "kind": "CLI/API",
+      "source": "https://github.com/google-gemini/gemini-cli"
+    },
+    {
+      "provider": "xAI",
+      "agent": "Grok Code",
+      "desc": "编程模型 + API",
+      "kind": "API",
+      "source": "https://x.ai/api"
+    },
+    {
+      "provider": "Mistral",
+      "agent": "Codestral / Le Chat",
+      "desc": "编程模型 + API",
+      "kind": "API",
+      "source": "https://mistral.ai/products/le-chat"
+    },
+    {
+      "provider": "DeepSeek",
+      "agent": "DeepSeek API + 开源",
+      "desc": "配 Cline/Cursor 用，性价比高",
+      "kind": "API/开源",
+      "source": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    {
+      "provider": "阿里",
+      "agent": "通义灵码 Lingma",
+      "desc": "IDE 插件 + agent + 百炼API",
+      "kind": "IDE/API",
+      "source": "https://lingma.aliyun.com/"
+    },
+    {
+      "provider": "字节",
+      "agent": "Trae / MarsCode",
+      "desc": "AI 原生 IDE(SOLO agent) + 火山API",
+      "kind": "IDE/API",
+      "source": "https://www.trae.ai/"
+    },
+    {
+      "provider": "百度",
+      "agent": "文心快码 Comate",
+      "desc": "IDE 插件 + 千帆API",
+      "kind": "IDE/API",
+      "source": "https://comate.baidu.com/"
+    },
+    {
+      "provider": "智谱",
+      "agent": "CodeGeeX",
+      "desc": "IDE 插件(300+语言) + API",
+      "kind": "IDE/API",
+      "source": "https://codegeex.cn/"
+    },
+    {
+      "provider": "腾讯",
+      "agent": "CodeBuddy",
+      "desc": "多 agent(规划/编码/部署) + 腾讯云API",
+      "kind": "IDE/API",
+      "source": "https://copilot.tencent.com/"
+    },
+    {
+      "provider": "月之暗面",
+      "agent": "Kimi K2",
+      "desc": "编程强模型 + Moonshot API",
+      "kind": "API",
+      "source": "https://platform.moonshot.cn/"
+    },
+    {
+      "provider": "第三方",
+      "agent": "Cursor / Cline / Aider",
+      "desc": "自带编程 agent 框架，接任意 API",
+      "kind": "客户端/框架",
+      "source": "https://cursor.com/"
+    }
+  ]
 }
