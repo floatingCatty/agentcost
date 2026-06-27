@@ -29,6 +29,8 @@
 #ac .card .nm{font-weight:500;color:#5A5046}
 #ac .card .nm a{color:#4E443A;text-decoration:none;border-bottom:1px dotted var(--mut)}
 #ac .card .nm a:hover{color:var(--accent);border-color:var(--accent)}
+#ac .vmark{font-size:11px;color:var(--mut)}
+#ac .vmark.ok{color:var(--sage)}
 #ac td a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--mut)}
 #ac td a:hover{color:var(--accent)}
 #ac .foot a{border-bottom:1px dotted var(--accent)}
@@ -177,8 +179,8 @@ function render(){
   el('t-adv').textContent=t('▸ 高级假设（电价 / 摊销年限）','▸ Assumptions (electricity / amortization)');
   el('t-amort').textContent=t('摊销','Amortize ');el('t-amortu').textContent=t('年','yr');el('t-elec').textContent=t('电价','Electricity ');el('t-elecu').textContent=t('¥/度','¥/kWh');
   buildSeg('seg-mode',MODES.map(m=>[m[0],t(m[1],m[2])]),S.shMode,v=>{S.shMode=v;render()});
-  const orLink=link('https://openrouter.ai/models','OpenRouter ↗'), gdLink=link((DATA.defaults&&DATA.defaults.cloud_src)||'#','getdeploying ↗');
-  el('t-disc').innerHTML=t(`数据来源：API 价格经 ${orLink} 自动刷新；云 GPU 价 ${gdLink}；订阅价点产品名进官网核对。数字随时变动、部分为估计。本工具开源、每周自动更新。`,`Sources: API prices via ${orLink} (auto-refreshed); cloud GPU via ${gdLink}; click a product name for its official page. Estimates, change often. Open-source, weekly auto-update.`);
+  const orLink=link('https://openrouter.ai/models','OpenRouter ↗'), gdLink=link((DATA.defaults&&DATA.defaults.cloud_src)||'#','getdeploying ↗'), subLink=link(DATA.sub_src||'#','aipricing.guru ↗');
+  el('t-disc').innerHTML=t(`数据来源：API 价格经 ${orLink} 每周自动刷新；云 GPU 价 ${gdLink}；订阅价交叉核对自 ${subLink}（✓=已核对，~=估计，点产品名进官网采购/核对）。数字随时变动、部分为估计。本工具开源。`,`Sources: API via ${orLink} (weekly auto-refresh); cloud GPU via ${gdLink}; subscriptions cross-checked vs ${subLink} (✓=checked, ~=estimate; click a name to buy/verify). Estimates, change often. Open-source.`);
   el('t-s2foot').innerHTML=t(`综合价 = 输入价×占比 + 输出价×(1−占比)。绿色 = 开源权重。价格来源 ${orLink}，点模型名进厂商定价页。`,`blended = in×share + out×(1−share). Green = open weights. Source ${orLink}; click a model for the vendor page.`);
   el('t-s3foot').innerHTML=t(`简化模型：自购需租足够卡满足吞吐；忽略冷启动/运维。云价来源 ${gdLink}；${(DATA.defaults&&DATA.defaults.buy_note)||'购买价为市场估价'}。`,`Simplified; ignores ops. Cloud price ${gdLink}; buy price = market estimate.`);
   buildSeg('seg-use',USE.map(u=>[u[0],t(u[1],u[2])]),useSel,v=>{useSel=v;render()});
@@ -198,7 +200,8 @@ function renderCards(){
   const c=el('cards1');c.innerHTML='';
   list.slice(0,12).forEach(p=>{const d=document.createElement('div');d.className='card';
     const note=p.note?` <span class="muted">· ${p.note}</span>`:'';
-    d.innerHTML=`<div class="nm">${link(p.source,p.name)} <span class="muted">${prov(p.provider)}</span></div>
+    const vm=p.verified==='x'?` <span class="vmark ok" title="${t('价格已第三方交叉核对','cross-checked')}">✓</span>`:` <span class="vmark" title="${t('估计，点名称以官网为准','estimate; click name to verify')}">~</span>`;
+    d.innerHTML=`<div class="nm">${link(p.source,p.name)}${vm} <span class="muted">${prov(p.provider)}</span></div>
       <div class="pr">${p.usd_mo===0?t('免费','Free'):moneyAbs(p.usd_mo)+t('/月','/mo')}${note}</div>
       <div class="gets">${getsT(p)}</div>
       <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','cap')}:${qual(p.quality)}</span> <span class="pill">${bestforT(p)}</span></div>`;

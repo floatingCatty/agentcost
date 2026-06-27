@@ -17,7 +17,8 @@
       "gets": "GPT-5.x、较高用量、联网/图像/语音",
       "gets_en": "GPT-5.x, higher limits, web/image/voice",
       "quality": "顶",
-      "source": "https://openai.com/chatgpt/pricing/"
+      "source": "https://openai.com/chatgpt/pricing/",
+      "verified": "x"
     },
     {
       "provider": "OpenAI",
@@ -33,7 +34,8 @@
       "gets": "最强模型高配额、深度研究",
       "gets_en": "Top models, high quota, deep research",
       "quality": "顶",
-      "source": "https://openai.com/chatgpt/pricing/"
+      "source": "https://openai.com/chatgpt/pricing/",
+      "verified": "x"
     },
     {
       "provider": "Anthropic",
@@ -49,7 +51,8 @@
       "gets": "Sonnet/Opus、Projects、较高用量",
       "gets_en": "Sonnet/Opus, Projects, higher limits",
       "quality": "顶",
-      "source": "https://claude.com/pricing"
+      "source": "https://claude.com/pricing",
+      "verified": "x"
     },
     {
       "provider": "Anthropic",
@@ -64,7 +67,8 @@
       "gets": "5 倍用量、优先 Opus",
       "gets_en": "5x limits, priority Opus",
       "quality": "顶",
-      "source": "https://claude.com/pricing"
+      "source": "https://claude.com/pricing",
+      "verified": "x"
     },
     {
       "provider": "Google",
@@ -80,7 +84,8 @@
       "gets": "Gemini 旗舰、Workspace 整合",
       "gets_en": "Flagship Gemini, Workspace",
       "quality": "顶",
-      "source": "https://one.google.com/about/google-ai-plans/"
+      "source": "https://one.google.com/about/google-ai-plans/",
+      "verified": "x"
     },
     {
       "provider": "Google",
@@ -96,7 +101,8 @@
       "gets": "最高配额、Veo 视频、最强 Gemini",
       "gets_en": "Top quota, Veo video, best Gemini",
       "quality": "顶",
-      "source": "https://one.google.com/about/google-ai-plans/"
+      "source": "https://one.google.com/about/google-ai-plans/",
+      "verified": "e"
     },
     {
       "provider": "Microsoft",
@@ -112,7 +118,8 @@
       "gets": "Word/Excel/PPT 内置、含 M365",
       "gets_en": "Built into Office, incl. M365",
       "quality": "高",
-      "source": "https://www.microsoft.com/microsoft-copilot"
+      "source": "https://www.microsoft.com/store/b/copilotpro",
+      "verified": "x"
     },
     {
       "provider": "Perplexity",
@@ -127,7 +134,8 @@
       "gets": "联网检索、多模型可选、引用来源",
       "gets_en": "Web search, model choice, citations",
       "quality": "高",
-      "source": "https://www.perplexity.ai/pro"
+      "source": "https://www.perplexity.ai/pro",
+      "verified": "x"
     },
     {
       "provider": "Perplexity",
@@ -142,7 +150,8 @@
       "gets": "无限查询、Labs、优先模型",
       "gets_en": "Unlimited queries, Labs, priority",
       "quality": "高",
-      "source": "https://www.perplexity.ai/pro"
+      "source": "https://www.perplexity.ai/pro",
+      "verified": "x"
     },
     {
       "provider": "xAI",
@@ -157,7 +166,8 @@
       "gets": "实时 X 信息、高配额 Grok",
       "gets_en": "Live X data, high-quota Grok",
       "quality": "高",
-      "source": "https://x.ai/grok"
+      "source": "https://x.ai/grok",
+      "verified": "x"
     },
     {
       "provider": "Mistral",
@@ -172,7 +182,8 @@
       "gets": "Mistral 旗舰、较高用量",
       "gets_en": "Flagship Mistral, higher limits",
       "quality": "高",
-      "source": "https://mistral.ai/products/le-chat"
+      "source": "https://mistral.ai/products/le-chat",
+      "verified": "e"
     },
     {
       "provider": "Quora",
@@ -188,7 +199,8 @@
       "gets": "GPT/Claude/Gemini 等一处用",
       "gets_en": "GPT/Claude/Gemini in one place",
       "quality": "高",
-      "source": "https://poe.com/"
+      "source": "https://poe.com/subscribe",
+      "verified": "e"
     },
     {
       "provider": "Meta",
@@ -202,7 +214,8 @@
       "gets": "免费、WhatsApp/IG 内置、Llama",
       "gets_en": "Free, in WhatsApp/IG, Llama",
       "quality": "中",
-      "source": "https://www.meta.ai/"
+      "source": "https://www.meta.ai/",
+      "verified": "e"
     },
     {
       "provider": "DeepSeek",
@@ -217,7 +230,8 @@
       "gets": "免费用旗舰模型、联网",
       "gets_en": "Free flagship model, web",
       "quality": "高",
-      "source": "https://www.deepseek.com/"
+      "source": "https://www.deepseek.com/",
+      "verified": "e"
     },
     {
       "provider": "字节",
@@ -232,7 +246,8 @@
       "gets_en": "Free basic; paid from ¥68/mo",
       "quality": "中",
       "source": "https://www.doubao.com/",
-      "note": "会员¥68/月起"
+      "note": "会员¥68/月起",
+      "verified": "e"
     },
     {
       "provider": "月之暗面",
@@ -248,7 +263,8 @@
       "gets_en": "Free basic; membership ¥49/mo",
       "quality": "高",
       "source": "https://www.kimi.com/",
-      "note": "会员¥49/月"
+      "note": "会员¥49/月",
+      "verified": "e"
     },
     {
       "provider": "阿里",
@@ -263,7 +279,8 @@
       "gets": "完全免费、文档/会议、Qwen 旗舰",
       "gets_en": "Fully free, docs/meetings, Qwen",
       "quality": "高",
-      "source": "https://www.tongyi.com/"
+      "source": "https://www.tongyi.com/",
+      "verified": "e"
     },
     {
       "provider": "百度",
@@ -278,7 +295,8 @@
       "gets": "完全免费、文心旗舰、百度搜索",
       "gets_en": "Fully free, Ernie, Baidu search",
       "quality": "高",
-      "source": "https://yiyan.baidu.com/"
+      "source": "https://yiyan.baidu.com/",
+      "verified": "e"
     },
     {
       "provider": "腾讯",
@@ -293,7 +311,8 @@
       "gets": "完全免费、混元+DeepSeek、公众号搜",
       "gets_en": "Fully free, Hunyuan+DeepSeek",
       "quality": "高",
-      "source": "https://yuanbao.tencent.com/"
+      "source": "https://yuanbao.tencent.com/",
+      "verified": "e"
     },
     {
       "provider": "智谱",
@@ -309,7 +328,8 @@
       "gets_en": "¥49/mo (Max ¥469), GLM, AutoGLM",
       "quality": "高",
       "source": "https://chatglm.cn/",
-      "note": "会员¥49/月起"
+      "note": "会员¥49/月起",
+      "verified": "e"
     },
     {
       "provider": "讯飞",
@@ -323,7 +343,8 @@
       "gets": "免费、语音识别/合成强",
       "gets_en": "Free, strong speech I/O",
       "quality": "中",
-      "source": "https://xinghuo.xfyun.cn/"
+      "source": "https://xinghuo.xfyun.cn/",
+      "verified": "e"
     },
     {
       "provider": "MiniMax",
@@ -337,7 +358,8 @@
       "gets": "免费、语音/视频生成强",
       "gets_en": "Free, strong voice/video gen",
       "quality": "中",
-      "source": "https://hailuoai.com/"
+      "source": "https://hailuoai.com/",
+      "verified": "e"
     },
     {
       "provider": "阶跃",
@@ -351,7 +373,8 @@
       "gets": "免费、Step 系列、图文理解",
       "gets_en": "Free, Step models, vision",
       "quality": "中",
-      "source": "https://yuewen.cn/"
+      "source": "https://yuewen.cn/",
+      "verified": "e"
     }
   ],
   "api_models": [
@@ -517,5 +540,6 @@
       "weights": "open",
       "quality": "高"
     }
-  ]
+  ],
+  "sub_src": "https://www.aipricing.guru/subscriptions/"
 }
