@@ -18,8 +18,7 @@
       "gets_en": "GPT-5.x, higher limits, web/image/voice",
       "quality": "顶",
       "source": "https://openai.com/chatgpt/pricing/",
-      "verified": "x",
-      "agent": "OpenAI API · Agents SDK"
+      "verified": "x"
     },
     {
       "provider": "OpenAI",
@@ -36,8 +35,7 @@
       "gets_en": "Top models, high quota, deep research",
       "quality": "顶",
       "source": "https://openai.com/chatgpt/pricing/",
-      "verified": "x",
-      "agent": "OpenAI API · Agents SDK"
+      "verified": "x"
     },
     {
       "provider": "Anthropic",
@@ -54,8 +52,7 @@
       "gets_en": "Sonnet/Opus, Projects, higher limits",
       "quality": "顶",
       "source": "https://claude.com/pricing",
-      "verified": "x",
-      "agent": "Anthropic API · Agent SDK · Claude Code · MCP"
+      "verified": "x"
     },
     {
       "provider": "Anthropic",
@@ -71,8 +68,7 @@
       "gets_en": "5x limits, priority Opus",
       "quality": "顶",
       "source": "https://claude.com/pricing",
-      "verified": "x",
-      "agent": "Anthropic API · Agent SDK · Claude Code · MCP"
+      "verified": "x"
     },
     {
       "provider": "Google",
@@ -89,8 +85,7 @@
       "gets_en": "Flagship Gemini, Workspace",
       "quality": "顶",
       "source": "https://one.google.com/about/google-ai-plans/",
-      "verified": "x",
-      "agent": "Gemini API · ADK"
+      "verified": "x"
     },
     {
       "provider": "Google",
@@ -107,8 +102,7 @@
       "gets_en": "Top quota, Veo video, best Gemini",
       "quality": "顶",
       "source": "https://one.google.com/about/google-ai-plans/",
-      "verified": "e",
-      "agent": "Gemini API · ADK"
+      "verified": "e"
     },
     {
       "provider": "Microsoft",
@@ -124,8 +118,7 @@
       "gets_en": "Built into Office, incl. M365",
       "quality": "高",
       "source": "https://www.microsoft.com/store/b/copilotpro",
-      "verified": "x",
-      "agent": "消费端;Agent 走 Copilot Studio/Azure(另购)"
+      "verified": "x"
     },
     {
       "provider": "Perplexity",
@@ -141,8 +134,7 @@
       "gets_en": "Web search, model choice, citations",
       "quality": "高",
       "source": "https://www.perplexity.ai/pro",
-      "verified": "x",
-      "agent": "Sonar API(检索向)"
+      "verified": "x"
     },
     {
       "provider": "Perplexity",
@@ -158,8 +150,7 @@
       "gets_en": "Unlimited queries, Labs, priority",
       "quality": "高",
       "source": "https://www.perplexity.ai/pro",
-      "verified": "x",
-      "agent": "Sonar API(检索向)"
+      "verified": "x"
     },
     {
       "provider": "xAI",
@@ -175,8 +166,7 @@
       "gets_en": "Live X data, high-quota Grok",
       "quality": "高",
       "source": "https://x.ai/grok",
-      "verified": "x",
-      "agent": "xAI API"
+      "verified": "x"
     },
     {
       "provider": "Mistral",
@@ -192,8 +182,7 @@
       "gets_en": "Flagship Mistral, higher limits",
       "quality": "高",
       "source": "https://mistral.ai/products/le-chat",
-      "verified": "e",
-      "agent": "Mistral API · 开源权重"
+      "verified": "e"
     },
     {
       "provider": "Quora",
@@ -209,8 +198,7 @@
       "gets_en": "GPT/Claude/Gemini in one place",
       "quality": "高",
       "source": "https://poe.com/subscribe",
-      "verified": "e",
-      "agent": "多模型聚合;Poe Bot API"
+      "verified": "e"
     },
     {
       "provider": "Meta",
@@ -225,8 +213,7 @@
       "gets_en": "Free, in WhatsApp/IG, Llama",
       "quality": "中",
       "source": "https://www.meta.ai/",
-      "verified": "e",
-      "agent": "开发用开源 Llama(自托管)"
+      "verified": "e"
     },
     {
       "provider": "DeepSeek",
@@ -242,16 +229,14 @@
       "gets_en": "Free flagship model, web",
       "quality": "高",
       "source": "https://www.deepseek.com/",
-      "verified": "e",
-      "agent": "DeepSeek API · 开源权重"
+      "verified": "e"
     },
     {
       "provider": "字节",
       "name": "豆包",
       "usd_mo": 0,
       "tags": [
-        "daily",
-        "code"
+        "daily"
       ],
       "best_for": "免费基础版·中文·语音",
       "best_for_en": "Free basic · Chinese · voice",
@@ -260,8 +245,7 @@
       "quality": "中",
       "source": "https://www.doubao.com/",
       "note": "会员¥68/月起",
-      "verified": "e",
-      "agent": "火山引擎 API · 扣子 Coze"
+      "verified": "e"
     },
     {
       "provider": "月之暗面",
@@ -279,8 +263,7 @@
       "quality": "高",
       "source": "https://www.kimi.com/",
       "note": "会员¥49/月",
-      "verified": "e",
-      "agent": "Moonshot API · 开源 K2"
+      "verified": "e"
     },
     {
       "provider": "阿里",
@@ -297,8 +280,7 @@
       "gets_en": "Fully free, docs/meetings, Qwen",
       "quality": "高",
       "source": "https://www.tongyi.com/",
-      "verified": "e",
-      "agent": "百炼 API · Qwen-Agent · 开源"
+      "verified": "e"
     },
     {
       "provider": "百度",
@@ -306,7 +288,6 @@
       "usd_mo": 0,
       "tags": [
         "daily",
-        "code",
         "doc"
       ],
       "best_for": "免费·中文·搜索整合",
@@ -315,8 +296,7 @@
       "gets_en": "Fully free, Ernie, Baidu search",
       "quality": "高",
       "source": "https://yiyan.baidu.com/",
-      "verified": "e",
-      "agent": "千帆 API · AppBuilder"
+      "verified": "e"
     },
     {
       "provider": "腾讯",
@@ -324,7 +304,6 @@
       "usd_mo": 0,
       "tags": [
         "daily",
-        "code",
         "doc"
       ],
       "best_for": "免费·微信生态·公众号检索",
@@ -333,8 +312,7 @@
       "gets_en": "Fully free, Hunyuan+DeepSeek",
       "quality": "高",
       "source": "https://yuanbao.tencent.com/",
-      "verified": "e",
-      "agent": "腾讯云 API · 元器"
+      "verified": "e"
     },
     {
       "provider": "智谱",
@@ -351,16 +329,14 @@
       "quality": "高",
       "source": "https://chatglm.cn/",
       "note": "会员¥49/月起",
-      "verified": "e",
-      "agent": "BigModel API · AutoGLM"
+      "verified": "e"
     },
     {
       "provider": "讯飞",
       "name": "讯飞星火",
       "usd_mo": 0,
       "tags": [
-        "daily",
-        "code"
+        "daily"
       ],
       "best_for": "免费·语音强·教育",
       "best_for_en": "Free · voice · education",
@@ -368,16 +344,14 @@
       "gets_en": "Free, strong speech I/O",
       "quality": "中",
       "source": "https://xinghuo.xfyun.cn/",
-      "verified": "e",
-      "agent": "讯飞开放平台 API"
+      "verified": "e"
     },
     {
       "provider": "MiniMax",
       "name": "海螺",
       "usd_mo": 0,
       "tags": [
-        "daily",
-        "code"
+        "daily"
       ],
       "best_for": "免费·多模态·语音视频",
       "best_for_en": "Free · multimodal · voice/video",
@@ -385,16 +359,14 @@
       "gets_en": "Free, strong voice/video gen",
       "quality": "中",
       "source": "https://hailuoai.com/",
-      "verified": "e",
-      "agent": "MiniMax 开放平台 API"
+      "verified": "e"
     },
     {
       "provider": "阶跃",
       "name": "跃问",
       "usd_mo": 0,
       "tags": [
-        "daily",
-        "code"
+        "daily"
       ],
       "best_for": "免费·多模态",
       "best_for_en": "Free · multimodal",
@@ -402,8 +374,7 @@
       "gets_en": "Free, Step models, vision",
       "quality": "中",
       "source": "https://yuewen.cn/",
-      "verified": "e",
-      "agent": "阶跃开放平台 API"
+      "verified": "e"
     }
   ],
   "api_models": [

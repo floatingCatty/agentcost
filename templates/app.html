@@ -142,7 +142,7 @@ function blended(m){const s=S.mix/100;return m.in*s+m.out*(1-s)}
 function el(id){return document.getElementById(id)}
 function setT(id,zh,en){const e=el(id);if(e)e.textContent=t(zh,en)}
 
-const USE=[['daily','日常/写作','Everyday'],['code','编程/Agent','Coding'],['doc','长文档/大上下文','Long docs']];
+const USE=[['daily','日常/写作','Everyday'],['code','编程','Coding'],['doc','长文档/大上下文','Long docs']];
 const BUD=[['free','免费','Free'],['lo','≤¥150/月','≤$20/mo'],['any','不限','Any']];
 const MODES=[['both','两者对比','Compare'],['cloud','租云算力','Rent cloud'],['buy','自购设备','Buy hardware']];
 const PROV_EN={'字节':'ByteDance','月之暗面':'Moonshot','阿里':'Alibaba','智谱':'Zhipu','百度':'Baidu','腾讯':'Tencent','讯飞':'iFlytek','阶跃':'StepFun'};
@@ -206,7 +206,6 @@ function renderCards(){
     d.innerHTML=`<div class="nm">${link(p.source,p.name)}${vm} <span class="muted">${prov(p.provider)}</span></div>
       <div class="pr">${p.usd_mo===0?t('免费','Free'):moneyAbs(p.usd_mo)+t('/月','/mo')}${note}</div>
       <div class="gets">${getsT(p)}</div>
-      ${(useSel==='code'&&p.agent)?`<div class="agentline">${t('开发','dev')}: ${p.agent}</div>`:''}
       <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','cap')}:${qual(p.quality)}</span> <span class="pill">${bestforT(p)}</span></div>`;
     c.appendChild(d)});
   if(!list.length)c.innerHTML=`<div class="muted">${t('没有匹配项，放宽预算试试。','No match, widen budget.')}</div>`;
