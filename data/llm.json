@@ -548,91 +548,104 @@
       "agent": "Codex",
       "desc": "CLI 编程 agent + API",
       "kind": "CLI/API",
-      "source": "https://openai.com/codex/"
+      "source": "https://openai.com/codex/",
+      "pricing": "含于 ChatGPT 订阅 / 或 API 计费"
     },
     {
       "provider": "Anthropic",
       "agent": "Claude Code",
       "desc": "终端编程 agent + API + MCP",
       "kind": "CLI/API",
-      "source": "https://www.claude.com/product/claude-code"
+      "source": "https://www.claude.com/product/claude-code",
+      "pricing": "含于 Claude 订阅 / 或 API 计费"
     },
     {
       "provider": "Google",
       "agent": "Gemini CLI / Antigravity",
       "desc": "CLI 编程 agent + API",
       "kind": "CLI/API",
-      "source": "https://github.com/google-gemini/gemini-cli"
+      "source": "https://github.com/google-gemini/gemini-cli",
+      "pricing": "免费额度 / Google AI Pro / API"
     },
     {
       "provider": "xAI",
       "agent": "Grok Code",
       "desc": "编程模型 + API",
       "kind": "API",
-      "source": "https://x.ai/api"
+      "source": "https://x.ai/api",
+      "pricing": "API 计费 / SuperGrok 订阅"
     },
     {
       "provider": "Mistral",
       "agent": "Codestral / Le Chat",
       "desc": "编程模型 + API",
       "kind": "API",
-      "source": "https://mistral.ai/products/le-chat"
+      "source": "https://mistral.ai/products/le-chat",
+      "pricing": "Le Chat 订阅 / 或 API"
     },
     {
       "provider": "DeepSeek",
       "agent": "DeepSeek API + 开源",
       "desc": "配 Cline/Cursor 用，性价比高",
       "kind": "API/开源",
-      "source": "https://api-docs.deepseek.com/quick_start/pricing"
+      "source": "https://api-docs.deepseek.com/quick_start/pricing",
+      "pricing": "API 计费 / 开源自托管"
     },
     {
       "provider": "阿里",
       "agent": "通义灵码 Lingma",
       "desc": "IDE 插件 + agent + 百炼API",
       "kind": "IDE/API",
-      "source": "https://lingma.aliyun.com/"
+      "source": "https://lingma.aliyun.com/",
+      "pricing": "免费 + 会员订阅 / 或 API"
     },
     {
       "provider": "字节",
       "agent": "Trae / MarsCode",
       "desc": "AI 原生 IDE(SOLO agent) + 火山API",
       "kind": "IDE/API",
-      "source": "https://www.trae.ai/"
+      "source": "https://www.trae.ai/",
+      "pricing": "免费 + 会员订阅 / 或 火山 API"
     },
     {
       "provider": "百度",
       "agent": "文心快码 Comate",
       "desc": "IDE 插件 + 千帆API",
       "kind": "IDE/API",
-      "source": "https://comate.baidu.com/"
+      "source": "https://comate.baidu.com/",
+      "pricing": "免费 + 会员订阅 / 或 千帆 API"
     },
     {
       "provider": "智谱",
       "agent": "CodeGeeX",
       "desc": "IDE 插件(300+语言) + API",
       "kind": "IDE/API",
-      "source": "https://codegeex.cn/"
+      "source": "https://codegeex.cn/",
+      "pricing": "免费 + 会员订阅 / 或 API"
     },
     {
       "provider": "腾讯",
       "agent": "CodeBuddy",
       "desc": "多 agent(规划/编码/部署) + 腾讯云API",
       "kind": "IDE/API",
-      "source": "https://copilot.tencent.com/"
+      "source": "https://copilot.tencent.com/",
+      "pricing": "免费 + 会员订阅 / 或 腾讯云 API"
     },
     {
       "provider": "月之暗面",
       "agent": "Kimi K2",
       "desc": "编程强模型 + Moonshot API",
       "kind": "API",
-      "source": "https://platform.moonshot.cn/"
+      "source": "https://platform.moonshot.cn/",
+      "pricing": "API 计费 / Kimi 会员"
     },
     {
       "provider": "第三方",
       "agent": "Cursor / Cline / Aider",
       "desc": "自带编程 agent 框架，接任意 API",
       "kind": "客户端/框架",
-      "source": "https://cursor.com/"
+      "source": "https://cursor.com/",
+      "pricing": "Cursor 订阅制 / Cline·Aider 免费(自带 API key)"
     }
   ]
 }

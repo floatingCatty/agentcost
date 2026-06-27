@@ -199,8 +199,9 @@ function renderCards(){
     el('t-s1sub').textContent=t('「编程」= 提供 API 或 Codex/Claude Code 类编程 agent 框架的服务；价格按 token 计，见 ② API 比价。','"Coding" = services offering an API or a coding-agent framework (Codex/Claude Code-like); priced per token — see ② API.');
     el('cards1').innerHTML=(DATA.coding_services||[]).map(s=>`<div class="card">
       <div class="nm">${link(s.source,s.agent)} <span class="muted">${prov(s.provider)}</span></div>
+      <div style="color:var(--accent);font-size:13px;margin:3px 0">${s.pricing||''}</div>
       <div class="gets">${s.desc}</div>
-      <div style="margin-top:6px"><span class="pill">${s.kind}</span> <span class="agentline" style="margin-top:0">API 计费 · 见 ②</span></div></div>`).join('');
+      <div style="margin-top:6px"><span class="pill">${s.kind}</span> ${/API/.test(s.pricing||'')?'<span class="agentline" style="margin-top:0">API 单价见 ②</span>':''}</div></div>`).join('');
     return;
   }
   budRow.style.display='';
