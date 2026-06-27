@@ -35,7 +35,7 @@ def main():
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
         "<title>AI 用多少钱？· Agent 成本对比 | AgentCost</title>\n"
         "<meta name=\"description\" content=\"把订阅、API、自部署租卡全部折算成元/万token一个口径，并算出自部署vs API的盈亏平衡点。\">\n"
-        "<style>body{margin:0;background:#0f1115}</style>\n</head>\n<body>\n"
+        "<style>body{margin:0;background:#FBF6EA}</style>\n</head>\n<body>\n"
         + app + "\n</body>\n</html>\n"
     )
     out = os.path.join(ROOT, "site")
