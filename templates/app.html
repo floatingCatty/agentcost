@@ -118,8 +118,14 @@ function blended(m){const s=S.mix/100;return m.in*s+m.out*(1-s)}
 function el(id){return document.getElementById(id)}
 function setT(id,zh,en){const e=el(id);if(e)e.textContent=t(zh,en)}
 
-const USE=[['daily','日常/写作','Everyday'],['code','编程','Coding'],['doc','长文档','Long docs'],['free','免费优先','Free first']];
+const USE=[['daily','日常/写作','Everyday'],['code','编程/Agent','Coding'],['doc','长文档/大上下文','Long docs']];
 const BUD=[['free','免费','Free'],['lo','≤¥150/月','≤$20/mo'],['any','不限','Any']];
+const PROV_EN={'字节':'ByteDance','月之暗面':'Moonshot','阿里':'Alibaba','智谱':'Zhipu'};
+const QUAL_EN={'顶':'top','高':'high','中':'mid'};
+function prov(p){return S.lang==='en'?(PROV_EN[p]||p):p}
+function qual(q){return S.lang==='en'?(QUAL_EN[q]||q):q}
+function bestforT(p){return S.lang==='en'?(p.best_for_en||p.best_for):p.best_for}
+function getsT(p){return S.lang==='en'?(p.gets_en||p.gets):p.gets}
 let useSel='daily', budSel='any';
 
 function gpuPrice(base){let best=null;for(const g of DATA.gpus){if(g.gpu===base&&(best===null||g.usd_hr<best))best=g.usd_hr}return best}
@@ -130,7 +136,7 @@ function render(){
   document.querySelectorAll('#seg-cur button').forEach(b=>b.classList.toggle('on',b.dataset.c===S.cur));
   el('t-title').textContent=t('AI 到底要花多少钱？','What does AI cost?');
   el('t-sub').textContent=t('订阅、API、自己租卡部署，全折算成「元 / 万 token」一个口径。','Plans, APIs and self-hosting in one unit: cost per 10k tokens.');
-  el('t-asof').textContent=t('数据：','data: ')+DATA.as_of;
+  el('t-asof').textContent=t('数据 ','data ')+DATA.as_of.split('·')[0].trim();
   setT('t-tab1','① 选 AI 助手','① Pick AI');
   setT('t-tab2','② API 比价','② API prices');
   setT('t-tab3','③ 自部署算账','③ Self-host');
@@ -158,17 +164,15 @@ function renderCards(){
   let list=DATA.consumer_plans.slice();
   if(budSel==='free')list=list.filter(p=>p.usd_mo===0);
   else if(budSel==='lo')list=list.filter(p=>p.usd_mo<=20);
-  if(useSel==='free')list=list.filter(p=>p.usd_mo===0);
-  if(useSel==='code')list=list.filter(p=>/编程|Agent|通用|写作/.test(p.best_for)||p.quality==='顶');
-  if(useSel==='doc')list=list.filter(p=>/长文|文档|通用/.test(p.best_for)||p.quality!=='中');
+  list=list.filter(p=>(p.tags||[]).includes(useSel));
   const rank={'顶':3,'高':2,'中':1};
   list.sort((a,b)=>(rank[b.quality]-rank[a.quality])||(a.usd_mo-b.usd_mo));
   const c=el('cards1');c.innerHTML='';
   list.slice(0,8).forEach(p=>{const d=document.createElement('div');d.className='card';
-    d.innerHTML=`<div class="nm">${p.name} <span class="muted">${p.provider}</span></div>
+    d.innerHTML=`<div class="nm">${p.name} <span class="muted">${prov(p.provider)}</span></div>
       <div class="pr">${p.usd_mo===0?t('免费','Free'):moneyAbs(p.usd_mo)+t('/月','/mo')}</div>
-      <div class="gets">${p.gets}</div>
-      <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','cap')}:${p.quality}</span> <span class="pill">${p.best_for}</span></div>`;
+      <div class="gets">${getsT(p)}</div>
+      <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','cap')}:${qual(p.quality)}</span> <span class="pill">${bestforT(p)}</span></div>`;
     c.appendChild(d)});
   if(!list.length)c.innerHTML=`<div class="muted">${t('没有匹配项，放宽预算试试。','No match, widen budget.')}</div>`;
 }
@@ -180,12 +184,12 @@ function renderTable(){
   rows.sort((a,b)=>{const v=(typeof a[sort2.k]==='number')?a[sort2.k]-b[sort2.k]:String(a[sort2.k]).localeCompare(b[sort2.k]);return sort2.asc?v:-v});
   let h='<tr>'+cols.map(c=>`<th class="${c[2]?'num':''}" data-k="${c[0]}">${c[1]}</th>`).join('')+'</tr>';
   for(const m of rows){h+=`<tr>
-    <td>${m.model}<div class="muted">${m.provider}</div></td>
+    <td>${m.model}<div class="muted">${prov(m.provider)}</div></td>
     <td class="num big">${money(perWan(m.blended))}</td>
     <td class="num">${money(perWan(m.in))}</td>
     <td class="num">${money(perWan(m.out))}</td>
-    <td class="num">${(m.ctx/1000)}k</td>
-    <td><span class="pill ${m.quality==='顶'?'top':''}">${m.quality}</span></td>
+    <td class="num">${Math.round(m.ctx/1000)}k</td>
+    <td><span class="pill ${m.quality==='顶'?'top':''}">${qual(m.quality)}</span></td>
     <td class="${m.weights==='open'?'open':'closed'}">${m.weights==='open'?t('开源','open'):t('闭源','closed')}</td></tr>`}
   const tb=el('tbl2');tb.innerHTML=h;
   tb.querySelectorAll('th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sort2.asc=(sort2.k===k)?!sort2.asc:true;sort2.k=k;renderTable()});

@@ -1,252 +1,36 @@
 {
   "as_of": "2026-06-27 · 主流厂商 API 价经 OpenRouter 自动刷新；订阅plan与能力档为人工维护",
   "fx_usd_cny": 7.2,
-  "note": "api_models 由 fetch/fetch_llm.py 经 OpenRouter 定期刷新；consumer_plans 人工维护。价格随时变动。",
+  "note": "api_models 由 fetch/fetch_llm.py 经 OpenRouter 定期刷新；consumer_plans 人工维护。tags 用于①选AI的用途筛选：daily/code/doc。",
   "consumer_plans": [
-    {
-      "provider": "OpenAI",
-      "name": "ChatGPT Plus",
-      "usd_mo": 20,
-      "region": "global",
-      "best_for": "通用·写作·日常",
-      "gets": "GPT-5.x、较高用量、联网/图像/语音",
-      "quality": "顶"
-    },
-    {
-      "provider": "OpenAI",
-      "name": "ChatGPT Pro",
-      "usd_mo": 200,
-      "region": "global",
-      "best_for": "重度·推理·研究",
-      "gets": "最强模型高配额、深度研究",
-      "quality": "顶"
-    },
-    {
-      "provider": "Anthropic",
-      "name": "Claude Pro",
-      "usd_mo": 20,
-      "region": "global",
-      "best_for": "写作·编程·长文",
-      "gets": "Sonnet/Opus、Projects、较高用量",
-      "quality": "顶"
-    },
-    {
-      "provider": "Anthropic",
-      "name": "Claude Max (5x)",
-      "usd_mo": 100,
-      "region": "global",
-      "best_for": "重度编程/Agent",
-      "gets": "5 倍用量、优先 Opus",
-      "quality": "顶"
-    },
-    {
-      "provider": "Google",
-      "name": "Google AI Pro",
-      "usd_mo": 20,
-      "region": "global",
-      "best_for": "通用·全家桶",
-      "gets": "Gemini 旗舰、Workspace 整合",
-      "quality": "顶"
-    },
-    {
-      "provider": "DeepSeek",
-      "name": "DeepSeek App",
-      "usd_mo": 0,
-      "region": "cn/global",
-      "best_for": "免费·够用·中文",
-      "gets": "免费用旗舰模型、联网",
-      "quality": "高"
-    },
-    {
-      "provider": "字节",
-      "name": "豆包",
-      "usd_mo": 0,
-      "region": "cn",
-      "best_for": "免费·中文日常·语音",
-      "gets": "免费、移动端强、语音/图像",
-      "quality": "中"
-    },
-    {
-      "provider": "月之暗面",
-      "name": "Kimi",
-      "usd_mo": 0,
-      "region": "cn",
-      "best_for": "免费·长文档·中文",
-      "gets": "免费、超长上下文、文件阅读",
-      "quality": "高"
-    },
-    {
-      "provider": "阿里",
-      "name": "通义",
-      "usd_mo": 0,
-      "region": "cn",
-      "best_for": "免费·中文·办公",
-      "gets": "免费、文档/会议、Qwen 旗舰",
-      "quality": "高"
-    }
+    {"provider": "OpenAI", "name": "ChatGPT Plus", "usd_mo": 20, "tags": ["daily", "code", "doc"], "best_for": "通用·写作·日常", "best_for_en": "General · writing · daily", "gets": "GPT-5.x、较高用量、联网/图像/语音", "gets_en": "GPT-5.x, higher limits, web/image/voice", "quality": "顶"},
+    {"provider": "OpenAI", "name": "ChatGPT Pro", "usd_mo": 200, "tags": ["code", "doc", "daily"], "best_for": "重度·推理·研究", "best_for_en": "Heavy · reasoning · research", "gets": "最强模型高配额、深度研究", "gets_en": "Top models, high quota, deep research", "quality": "顶"},
+    {"provider": "Anthropic", "name": "Claude Pro", "usd_mo": 20, "tags": ["code", "doc", "daily"], "best_for": "写作·编程·长文", "best_for_en": "Writing · coding · long-form", "gets": "Sonnet/Opus、Projects、较高用量", "gets_en": "Sonnet/Opus, Projects, higher limits", "quality": "顶"},
+    {"provider": "Anthropic", "name": "Claude Max (5x)", "usd_mo": 100, "tags": ["code", "doc"], "best_for": "重度编程/Agent", "best_for_en": "Heavy coding / agents", "gets": "5 倍用量、优先 Opus", "gets_en": "5x limits, priority Opus", "quality": "顶"},
+    {"provider": "Google", "name": "Google AI Pro", "usd_mo": 20, "tags": ["daily", "doc", "code"], "best_for": "通用·全家桶·大上下文", "best_for_en": "General · ecosystem · long context", "gets": "Gemini 旗舰、Workspace 整合", "gets_en": "Flagship Gemini, Workspace", "quality": "顶"},
+    {"provider": "DeepSeek", "name": "DeepSeek App", "usd_mo": 0, "tags": ["daily", "code"], "best_for": "免费·够用·中文", "best_for_en": "Free · capable · Chinese", "gets": "免费用旗舰模型、联网", "gets_en": "Free flagship model, web", "quality": "高"},
+    {"provider": "字节", "name": "豆包", "usd_mo": 0, "tags": ["daily"], "best_for": "免费·中文日常·语音", "best_for_en": "Free · Chinese daily · voice", "gets": "免费、移动端强、语音/图像", "gets_en": "Free, strong on mobile, voice/image", "quality": "中"},
+    {"provider": "月之暗面", "name": "Kimi", "usd_mo": 0, "tags": ["doc", "daily"], "best_for": "免费·长文档·超长上下文", "best_for_en": "Free · long docs · ultra-long context", "gets": "免费、超长上下文、文件阅读", "gets_en": "Free, ultra-long context, file reading", "quality": "高"},
+    {"provider": "阿里", "name": "通义", "usd_mo": 0, "tags": ["daily", "doc"], "best_for": "免费·中文·办公文档", "best_for_en": "Free · Chinese · office docs", "gets": "免费、文档/会议、Qwen 旗舰", "gets_en": "Free, docs/meetings, flagship Qwen", "quality": "高"}
   ],
   "api_models": [
-    {
-      "provider": "OpenAI",
-      "model": "GPT-5.5",
-      "in": 5.0,
-      "out": 30.0,
-      "ctx": 1050000,
-      "weights": "closed",
-      "quality": "顶"
-    },
-    {
-      "provider": "OpenAI",
-      "model": "GPT-5.4",
-      "in": 2.5,
-      "out": 15.0,
-      "ctx": 1050000,
-      "weights": "closed",
-      "quality": "顶"
-    },
-    {
-      "provider": "OpenAI",
-      "model": "GPT-5.4 mini",
-      "in": 0.75,
-      "out": 4.5,
-      "ctx": 400000,
-      "weights": "closed",
-      "quality": "高"
-    },
-    {
-      "provider": "OpenAI",
-      "model": "GPT-5.4 nano",
-      "in": 0.2,
-      "out": 1.25,
-      "ctx": 400000,
-      "weights": "closed",
-      "quality": "中"
-    },
-    {
-      "provider": "Anthropic",
-      "model": "Claude Opus 4.8",
-      "in": 5.0,
-      "out": 25.0,
-      "ctx": 1000000,
-      "weights": "closed",
-      "quality": "顶"
-    },
-    {
-      "provider": "Anthropic",
-      "model": "Claude Sonnet 4.6",
-      "in": 3.0,
-      "out": 15.0,
-      "ctx": 1000000,
-      "weights": "closed",
-      "quality": "顶"
-    },
-    {
-      "provider": "Anthropic",
-      "model": "Claude Haiku 4.5",
-      "in": 1.0,
-      "out": 5.0,
-      "ctx": 200000,
-      "weights": "closed",
-      "quality": "高"
-    },
-    {
-      "provider": "Google",
-      "model": "Gemini 3.1 Pro",
-      "in": 2.0,
-      "out": 12.0,
-      "ctx": 1048756,
-      "weights": "closed",
-      "quality": "顶"
-    },
-    {
-      "provider": "Google",
-      "model": "Gemini 3.5 Flash",
-      "in": 1.5,
-      "out": 9.0,
-      "ctx": 1048576,
-      "weights": "closed",
-      "quality": "高"
-    },
-    {
-      "provider": "Google",
-      "model": "Gemini 2.5 Flash",
-      "in": 0.3,
-      "out": 2.5,
-      "ctx": 1048576,
-      "weights": "closed",
-      "quality": "高"
-    },
-    {
-      "provider": "Google",
-      "model": "Gemini 3.1 Flash-Lite",
-      "in": 0.25,
-      "out": 1.5,
-      "ctx": 1048576,
-      "weights": "closed",
-      "quality": "中"
-    },
-    {
-      "provider": "xAI",
-      "model": "Grok 4.3",
-      "in": 1.25,
-      "out": 2.5,
-      "ctx": 1000000,
-      "weights": "closed",
-      "quality": "高"
-    },
-    {
-      "provider": "DeepSeek",
-      "model": "DeepSeek-V4 Pro",
-      "in": 0.435,
-      "out": 0.87,
-      "ctx": 1048576,
-      "weights": "open",
-      "quality": "顶"
-    },
-    {
-      "provider": "DeepSeek",
-      "model": "DeepSeek-V4 Flash",
-      "in": 0.09,
-      "out": 0.18,
-      "ctx": 1048576,
-      "weights": "open",
-      "quality": "高"
-    },
-    {
-      "provider": "阿里",
-      "model": "Qwen3.7 Max",
-      "in": 1.25,
-      "out": 3.75,
-      "ctx": 1000000,
-      "weights": "open",
-      "quality": "高"
-    },
-    {
-      "provider": "阿里",
-      "model": "Qwen3.7 Plus",
-      "in": 0.32,
-      "out": 1.28,
-      "ctx": 1000000,
-      "weights": "open",
-      "quality": "高"
-    },
-    {
-      "provider": "智谱",
-      "model": "GLM-5.2",
-      "in": 0.95,
-      "out": 3.0,
-      "ctx": 1048576,
-      "weights": "open",
-      "quality": "高"
-    },
-    {
-      "provider": "月之暗面",
-      "model": "Kimi K2.7",
-      "in": 0.74,
-      "out": 3.5,
-      "ctx": 262144,
-      "weights": "open",
-      "quality": "高"
-    }
+    {"provider": "OpenAI", "model": "GPT-5.5", "in": 5.0, "out": 30.0, "ctx": 1050000, "weights": "closed", "quality": "顶"},
+    {"provider": "OpenAI", "model": "GPT-5.4", "in": 2.5, "out": 15.0, "ctx": 1050000, "weights": "closed", "quality": "顶"},
+    {"provider": "OpenAI", "model": "GPT-5.4 mini", "in": 0.75, "out": 4.5, "ctx": 400000, "weights": "closed", "quality": "高"},
+    {"provider": "OpenAI", "model": "GPT-5.4 nano", "in": 0.2, "out": 1.25, "ctx": 400000, "weights": "closed", "quality": "中"},
+    {"provider": "Anthropic", "model": "Claude Opus 4.8", "in": 5.0, "out": 25.0, "ctx": 1000000, "weights": "closed", "quality": "顶"},
+    {"provider": "Anthropic", "model": "Claude Sonnet 4.6", "in": 3.0, "out": 15.0, "ctx": 1000000, "weights": "closed", "quality": "顶"},
+    {"provider": "Anthropic", "model": "Claude Haiku 4.5", "in": 1.0, "out": 5.0, "ctx": 200000, "weights": "closed", "quality": "高"},
+    {"provider": "Google", "model": "Gemini 3.1 Pro", "in": 2.0, "out": 12.0, "ctx": 1048756, "weights": "closed", "quality": "顶"},
+    {"provider": "Google", "model": "Gemini 3.5 Flash", "in": 1.5, "out": 9.0, "ctx": 1048576, "weights": "closed", "quality": "高"},
+    {"provider": "Google", "model": "Gemini 2.5 Flash", "in": 0.3, "out": 2.5, "ctx": 1048576, "weights": "closed", "quality": "高"},
+    {"provider": "Google", "model": "Gemini 3.1 Flash-Lite", "in": 0.25, "out": 1.5, "ctx": 1048576, "weights": "closed", "quality": "中"},
+    {"provider": "xAI", "model": "Grok 4.3", "in": 1.25, "out": 2.5, "ctx": 1000000, "weights": "closed", "quality": "高"},
+    {"provider": "DeepSeek", "model": "DeepSeek-V4 Pro", "in": 0.435, "out": 0.87, "ctx": 1048576, "weights": "open", "quality": "顶"},
+    {"provider": "DeepSeek", "model": "DeepSeek-V4 Flash", "in": 0.09, "out": 0.18, "ctx": 1048576, "weights": "open", "quality": "高"},
+    {"provider": "阿里", "model": "Qwen3.7 Max", "in": 1.25, "out": 3.75, "ctx": 1000000, "weights": "open", "quality": "高"},
+    {"provider": "阿里", "model": "Qwen3.7 Plus", "in": 0.32, "out": 1.28, "ctx": 1000000, "weights": "open", "quality": "高"},
+    {"provider": "智谱", "model": "GLM-5.2", "in": 0.95, "out": 3.0, "ctx": 1048576, "weights": "open", "quality": "高"},
+    {"provider": "月之暗面", "model": "Kimi K2.7", "in": 0.74, "out": 3.5, "ctx": 262144, "weights": "open", "quality": "高"}
   ]
 }
