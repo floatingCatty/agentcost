@@ -36,6 +36,7 @@
 #ac td a:hover{color:var(--accent)}
 #ac .foot a{border-bottom:1px dotted var(--accent)}
 #ac .card .pr{font-size:23px;color:var(--accent);margin:3px 0}
+#ac .tiers{font-size:13.5px;color:var(--accent);margin:4px 0;line-height:1.6}
 #ac .card .gets{font-size:12.5px;color:var(--soft);line-height:1.65}
 #ac .pill{display:inline-block;font-size:11.5px;padding:1px 10px;border-radius:12px;background:#F4ECDF;border:1px solid var(--line);color:var(--soft);margin-top:3px}
 #ac .pill.top{background:var(--sage-bg);border-color:#D2E0D2;color:#5E7E63}
@@ -192,23 +193,23 @@ function render(){
 }
 function buildSeg(id,items,sel,cb){const c=el(id);c.innerHTML='';items.forEach(([v,label])=>{const b=document.createElement('button');b.textContent=label;b.className=v===sel?'on':'';b.onclick=()=>cb(v);c.appendChild(b)})}
 
+function minUsd(p){const xs=(p.tiers||[]).filter(t=>t.usd!=null).map(t=>t.usd);return xs.length?Math.min(...xs):1e9}
+function tierStr(p){return (p.tiers||[]).map(t=>`${t.tier} ${t.usd===0?t('免费','Free'):(t.usd==null?t('见官网','site'):moneyAbs(t.usd))}`).join('　·　')}
 function renderCards(){
-  let list=DATA.consumer_plans.slice();
-  if(budSel==='free')list=list.filter(p=>p.usd_mo===0);
-  else if(budSel==='lo')list=list.filter(p=>p.usd_mo<=20);
-  list=list.filter(p=>(p.tags||[]).includes(useSel));
+  let list=DATA.consumer_plans.filter(p=>(p.tags||[]).includes(useSel));
+  if(budSel==='free')list=list.filter(p=>(p.tiers||[]).some(t=>t.usd===0));
+  else if(budSel==='lo')list=list.filter(p=>(p.tiers||[]).some(t=>t.usd!=null&&t.usd<=20));
   const rank={'顶':3,'高':2,'中':1};
-  list.sort((a,b)=>(rank[b.quality]-rank[a.quality])||(a.usd_mo-b.usd_mo));
-  const c=el('cards1');c.innerHTML='';
-  list.slice(0,12).forEach(p=>{const d=document.createElement('div');d.className='card';
-    const note=p.note?` <span class="muted">· ${p.note}</span>`:'';
+  list.sort((a,b)=>(rank[b.quality]-rank[a.quality])||(minUsd(a)-minUsd(b)));
+  const c=el('cards1');
+  c.innerHTML=list.map(p=>{
     const vm=p.verified==='x'?` <span class="vmark ok" title="${t('价格已第三方交叉核对','cross-checked')}">✓</span>`:` <span class="vmark" title="${t('估计，点名称以官网为准','estimate; click name to verify')}">~</span>`;
-    d.innerHTML=`<div class="nm">${link(p.source,p.name)}${vm} <span class="muted">${prov(p.provider)}</span></div>
-      <div class="pr">${p.usd_mo===0?(p.note?t('免费起','Free+'):t('免费','Free')):moneyAbs(p.usd_mo)+t('/月','/mo')}${note}</div>
-      <div class="gets">${getsT(p)}</div>
-      <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','cap')}:${qual(p.quality)}</span> <span class="pill">${bestforT(p)}</span></div>`;
-    c.appendChild(d)});
-  if(!list.length)c.innerHTML=`<div class="muted">${t('没有匹配项，放宽预算试试。','No match, widen budget.')}</div>`;
+    return `<div class="card">
+      <div class="nm">${link(p.source,p.name)}${vm} <span class="muted">${prov(p.provider)}</span></div>
+      <div class="tiers">${tierStr(p)}</div>
+      <div class="gets">${bestforT(p)}</div>
+      <div style="margin-top:6px"><span class="pill ${p.quality==='顶'?'top':''}">${t('能力','tier')}:${qual(p.quality)}</span></div></div>`;
+  }).join('') || `<div class="muted">${t('没有匹配项，放宽预算试试。','No match, widen budget.')}</div>`;
 }
 
 let sort2={k:'blended',asc:true};
