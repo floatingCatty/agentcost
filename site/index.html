@@ -203,12 +203,12 @@ function render(){
 }
 function buildSeg(id,items,sel,cb){const c=el(id);c.innerHTML='';items.forEach(([v,label])=>{const b=document.createElement('button');b.textContent=label;b.className=v===sel?'on':'';b.onclick=()=>cb(v);c.appendChild(b)})}
 
-function minUsd(p){const xs=(p.tiers||[]).filter(t=>t.usd!=null).map(t=>t.usd);return xs.length?Math.min(...xs):1e9}
-function tierStr(p){return (p.tiers||[]).map(t=>`${t.tier} ${t.usd===0?t('免费','Free'):(t.usd==null?t('见官网','site'):moneyAbs(t.usd))}`).join('　·　')}
+function minUsd(p){const xs=(p.tiers||[]).filter(x=>x.usd!=null).map(x=>x.usd);return xs.length?Math.min(...xs):1e9}
+function tierStr(p){return (p.tiers||[]).map(x=>`${x.tier} ${x.usd===0?t('免费','Free'):(x.usd==null?t('见官网','site'):moneyAbs(x.usd))}`).join('　·　')}
 function renderCards(){
   let list=DATA.consumer_plans.filter(p=>(p.tags||[]).includes(useSel));
-  if(budSel==='free')list=list.filter(p=>(p.tiers||[]).some(t=>t.usd===0));
-  else if(budSel==='lo')list=list.filter(p=>(p.tiers||[]).some(t=>t.usd!=null&&t.usd<=20));
+  if(budSel==='free')list=list.filter(p=>(p.tiers||[]).some(x=>x.usd===0));
+  else if(budSel==='lo')list=list.filter(p=>(p.tiers||[]).some(x=>x.usd!=null&&x.usd<=20));
   const rank={'顶':3,'高':2,'中':1};
   list.sort((a,b)=>(rank[b.quality]-rank[a.quality])||(minUsd(a)-minUsd(b)));
   const c=el('cards1');
