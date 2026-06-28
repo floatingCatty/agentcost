@@ -173,13 +173,13 @@ function render(){
   document.querySelectorAll('#seg-lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===S.lang));
   document.querySelectorAll('#seg-cur button').forEach(b=>b.classList.toggle('on',b.dataset.c===S.cur));
   el('t-title').textContent=t('AI 到底要花多少钱？','What does AI cost?');
-  el('t-sub').textContent=t('订阅、API、自己租卡部署，全折算成「元 / 万 token」一个口径。','Plans, APIs and self-hosting in one unit: cost per 10k tokens.');
+  el('t-sub').textContent=t('订阅、API、租卡、部署，哪个划算？','Subscriptions, API, GPU rental, self-host — which is worth it?');
   el('t-asof').textContent=t('数据 ','data ')+DATA.as_of.split('·')[0].trim();
   setT('t-tab1','① 选 AI 助手','① Pick AI');
   setT('t-tab2','② API 比价','② API prices');
   setT('t-tab3','③ 自部署算账','③ Self-host');
   el('t-s1h').textContent=t('我就想用 AI，选哪个？','Which AI should I use?');
-  el('t-s1sub').textContent=t('给非技术朋友：按用途和预算，直接给推荐。','Pick by use-case & budget.');
+  el('t-s1sub').textContent='';
   el('t-use').textContent=t('用途：','Use: ');el('t-bud').textContent=t('预算：','Budget: ');
   el('t-s2h').textContent=t('API 价格对比（元/万 token）','API price compare (per 10k tokens)');
   el('t-s2lvl').textContent=t('点表头可排序','click headers to sort');
