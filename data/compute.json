@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-28 · GPU 价为人工/脚本维护的 on-demand 最低档；吞吐为估计",
+  "as_of": "2026-06-29 · GPU 价为人工/脚本维护的 on-demand 最低档；吞吐为估计",
   "note": "支持两种自部署：cloud(按时租) 与 buy(自购，CapEx 摊销+电费)。每个模型给多种量化方案(quant)及其显存需求与质量损失。tok_s_ref 为该模型在 ref_n×ref_gpu 上的聚合解码吞吐估计，引擎按相对算力 perf 缩放到其它卡。所有数字均为量级估计。",
   "defaults": {
     "elec_usd_kwh": 0.1,
