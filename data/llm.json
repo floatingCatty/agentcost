@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-29 · 主流厂商 API 价经 OpenRouter 自动刷新；订阅plan与能力档为人工维护",
+  "as_of": "2026-07-06 · 主流厂商 API 价经 OpenRouter 自动刷新；订阅plan与能力档为人工维护",
   "fx_usd_cny": 7.2,
   "note": "api_models 由 fetch/fetch_llm.py 经 OpenRouter 刷新；consumer_plans 人工维护(含 source 官网链接)。tags: daily/code/doc。价格随时变动，点名称进官网核对。",
   "consumer_plans": [
@@ -741,8 +741,8 @@
     {
       "provider": "智谱",
       "model": "GLM-5.2",
-      "in": 0.95,
-      "out": 3.0,
+      "in": 0.686,
+      "out": 2.156,
       "ctx": 1048576,
       "weights": "open",
       "quality": "高"
