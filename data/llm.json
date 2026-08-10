@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-03 · 主流厂商 API 价经 OpenRouter 自动刷新；订阅plan与能力档为人工维护",
+  "as_of": "2026-08-10 · 主流厂商 API 价经 OpenRouter 自动刷新；订阅plan与能力档为人工维护",
   "fx_usd_cny": 7.2,
   "note": "api_models 由 fetch/fetch_llm.py 经 OpenRouter 刷新；consumer_plans 人工维护(含 source 官网链接)。tags: daily/code/doc。价格随时变动，点名称进官网核对。",
   "consumer_plans": [
@@ -741,8 +741,8 @@
     {
       "provider": "智谱",
       "model": "GLM-5.2",
-      "in": 1.19,
-      "out": 3.74,
+      "in": 0.76,
+      "out": 2.42,
       "ctx": 1048576,
       "weights": "open",
       "quality": "高"
@@ -750,7 +750,7 @@
     {
       "provider": "月之暗面",
       "model": "Kimi K2.7",
-      "in": 0.73,
+      "in": 0.7,
       "out": 3.5,
       "ctx": 262144,
       "weights": "open",
