@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-17 · 主流厂商 API 价经 OpenRouter 自动刷新；订阅plan与能力档为人工维护",
+  "as_of": "2026-08-24 · 主流厂商 API 价经 OpenRouter 自动刷新；订阅plan与能力档为人工维护",
   "fx_usd_cny": 7.2,
   "note": "api_models 由 fetch/fetch_llm.py 经 OpenRouter 刷新；consumer_plans 人工维护(含 source 官网链接)。tags: daily/code/doc。价格随时变动，点名称进官网核对。",
   "consumer_plans": [
@@ -705,8 +705,8 @@
     {
       "provider": "DeepSeek",
       "model": "DeepSeek-V4 Pro",
-      "in": 1.32,
-      "out": 3.96,
+      "in": 0.5262,
+      "out": 1.0524,
       "ctx": 1048576,
       "weights": "open",
       "quality": "顶"
@@ -714,8 +714,8 @@
     {
       "provider": "DeepSeek",
       "model": "DeepSeek-V4 Flash",
-      "in": 0.0839,
-      "out": 0.1677,
+      "in": 0.0574,
+      "out": 0.1148,
       "ctx": 1048576,
       "weights": "open",
       "quality": "高"
@@ -741,8 +741,8 @@
     {
       "provider": "智谱",
       "model": "GLM-5.2",
-      "in": 0.76,
-      "out": 2.42,
+      "in": 0.966,
+      "out": 3.036,
       "ctx": 1048576,
       "weights": "open",
       "quality": "高"
@@ -750,8 +750,8 @@
     {
       "provider": "月之暗面",
       "model": "Kimi K2.7",
-      "in": 0.71,
-      "out": 3.5,
+      "in": 0.67,
+      "out": 3.4,
       "ctx": 262144,
       "weights": "open",
       "quality": "高"
